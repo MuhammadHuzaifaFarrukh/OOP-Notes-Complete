@@ -1,4 +1,4 @@
-# 📚 OOP Complete Course
+# 📚 OOP Complete Notes (Course)
 
 > A comprehensive, in-depth course covering all essential concepts of Object-Oriented Programming (OOP), implemented in C++. This repository is designed to be a complete learning resource, from beginner principles to advanced.
 
