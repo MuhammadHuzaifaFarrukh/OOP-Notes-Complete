@@ -6,7 +6,7 @@
 
 ## 🚀 Course Overview
 
-This repository is structured as a full curriculum, containing many topics/lectures** and over **[60-70+] example files for each topic**. Each file and directory is carefully named to correspond to a specific concept, providing a clear and sequential learning path.
+This repository is structured as a full curriculum, containing many topics/lectures and over [60-70+] example files for each topic**. Each file and directory is carefully named to correspond to a specific concept, providing a clear and sequential learning path.
 
 ### Key Concepts Covered:
 
