@@ -18,7 +18,7 @@ This repository is structured as a full curriculum, containing many topics/lectu
 
 ## 📁 Repository Structure
 
-The files are organized into directories, where each directory represents a major topic or module. Within each module, you'll find the lecture files (code examples) numbered sequentially.
+The files are organized into directories, where each directory represents a major topic or module. Within each module, you'll find the files (code examples) numbered sequentially.
 All files have comments provided for detailed explanation
 
 ---
