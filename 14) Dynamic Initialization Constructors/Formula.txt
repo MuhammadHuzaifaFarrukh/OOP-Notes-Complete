@@ -1,0 +1,22 @@
+Formula for Simple Interest is  :     
+
+S.I = (P*R*T) where R = r/100.  
+It calulates the amount which is to be added in original.
+Can be done using a loop but just this formula is recommended ...
+And later we can add this simple interest to our original amount in final answer.
+Here  'P' is constant , 'T' is changing but 'R' may or may not change depending on the deal.
+
+
+
+Formula for Amount of Simple Interest :
+
+Amount  for S.I =     P*(1+RT) where R = r / 100  
+like Enter 3% , not 0.03 . 
+It calculates the final amount after simple interest .
+
+And Principal amount remains the same , it does not change . If we have initially 
+1000 as principal amount then we will put interest on that 1000 value even after
+'n' years . It can also be done using a loop , but again , this formula is recommended more as ' P ' has to be fixed for every iteration .
+ 
+But both , simple interest and amount of simple interest can be done using a loop where we keep adding our
+original amount to (P*R*T) formula .
