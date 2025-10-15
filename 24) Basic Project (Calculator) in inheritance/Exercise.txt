@@ -1,0 +1,15 @@
+Try to do this by your own by hints :
+
+// Creating a Calculator using Inheritance :
+// Idea :
+/*
+Create 2 classes:
+    1. SimpleCalculator - Takes input of 2 numbers using a utility function and performs +, -, *, /, sqrt , reciprocal ,negative and displays the results using another function.
+    2. ScientificCalculator - Takes input of 2 numbers using a utility function and performs any four scientific operations of your choice and displays the results using another function.
+
+    Create another class HybridCalculator and inherit it using these 2 classes:
+    Q1. What type of Inheritance are you using? -----> Multiple Inheritance  (But it can also be done by using Single Inheritance)
+    Q2. Which mode of Inheritance are you using? ----> Public Mode in both base inheritances
+    Q3. Create an object of HybridCalculator and display results of the simple and scientific calculator.
+    Q4. How is code reusability implemented?
+*/
