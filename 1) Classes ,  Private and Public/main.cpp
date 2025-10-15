@@ -3,7 +3,7 @@
 using namespace std;
 
 class emp
-{
+{ 
 private:
     int a=1,b=2,c=3;
 public:
@@ -38,3 +38,4 @@ int main()
     return 0;
 
 }
+
