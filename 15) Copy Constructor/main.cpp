@@ -18,6 +18,7 @@ public:
 
     number(int );
     number(number &); //Copy Constructor , You need to delete this and definition if you want to generate the compiler copy constructor.But if we only write a copy constructor , then compiler will generate an error
+    //Using const is generally good as without it :
     void display();
 
 };
