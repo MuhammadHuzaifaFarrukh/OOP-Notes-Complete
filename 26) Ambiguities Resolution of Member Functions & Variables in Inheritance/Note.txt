@@ -1,0 +1,1 @@
+This program is for Ambiguity resolution of Member Functions & Variables in Inheritances                                                                                        
