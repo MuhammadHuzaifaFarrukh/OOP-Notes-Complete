@@ -42,19 +42,19 @@ int main()
 
     a.printdata();
 
-    Complex b = Complex ( 6,5);//Explicit Call
+    Complex b = Complex ( 6,5);//Explicit Call (Copy Epsilon , object b is constructed directly by calling the parameterized constructor in its final memory using the arg 6 and 5)
+    //Although compiler uses Copy Epsilon Method here for optimization , we may think as parameterized constructor and compiler generated copy constructor called here , though it did happen in older C++ versions)
     b.printdata();
     return 0;
 }
 */
 
 //Also it is not mandatory that the blank (default) constructor by compiler or a default / blank by user with no operations in it will set the values of class member variables to zero as it sets them random (garbage) as well
-//So you can either 1) Make a default constructor with setting value of each member set to zero and then initializing obj with either simple declarartion or using {}after its name e.g like this Point P or Point P{}
-//or 2) Make a member initialization list in the blank / default constructor and then make obj instance as simple declaration or you can also do that
-//3) When no user-defined default constructor and When making an instance of a class you can define it as : Point P = {} or Point P{} , this sets all the member variables to zero
-//However this Point P = {} or Point P{} or simply Point P ; won't work if user has already made a default / blank constructor that does nothing
+//So you can either 1) Make a default constructor with setting value of each member set to zero or 2) Make a member initialization list in the blank / default constructor or you can also do that
+//3) When making an instance of a class you can define it as : Point P = {} , this sets all the member variables to zero
+//However this Point P = {} won't work if user has already made a default / blank constructor that does nothing
 
-//4) Making a default constructor but using it like Point()=default and then when making an instance of a class use again Point P = {} or Point P{} , this ensures all member variables set to zero
+//4) Making a default constructor but using it like Point()=default and then when making an instance of a class use again Point P = {} , this ensures all member variables set to zero
 
 
 //Also while using the myclass() = default constructor , this constructor is the one provided by compiler even if you have made / used parameterized constructors
@@ -125,6 +125,7 @@ ClassObj Obj = {1, {1,2,3,4,5} , new int[10] } ;
 //For this to work , constructor with no arguments must not be present (that's a blank / default one that does something)
 //Your constructors should have no default arguments at all for this to work
 
+//If you make a MyClass() = default then this syntax to initialize won't work in newer C++ versions
 */
 
 
