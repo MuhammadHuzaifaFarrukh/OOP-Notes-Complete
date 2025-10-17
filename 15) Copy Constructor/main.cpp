@@ -8,7 +8,7 @@ class number
 {
 private:
     int a;
-public:
+public: 
 
     //number(){} is just a blank constructor if below one is not used. It will only initialize random values for all member variables if they are not initialized for the object
     number()  // This one will initialize the member variable a for all objects if they have not initialized it yet.
