@@ -8,7 +8,7 @@ class number
 {
 private:
     int a;
-public: 
+public:
 
     //number(){} is just a blank constructor if below one is not used. It will only initialize random values for all member variables if they are not initialized for the object
     number()  // This one will initialize the member variable a for all objects if they have not initialized it yet.
@@ -34,8 +34,9 @@ number::number(int num)
 //Also compiler generated copy constructor leads to problems when we have dynamically allocated member variables , so its better to create your own in these cases
 
 number::number(number &obj )  //We pass object reference here , it is necessary and writing const with it makes a good practice. Pass by value involves copying object and this invokes the copy constructor for that dummy object but again , copy constructor is called for that dummy object's dummy object and it becomes a recursion so pass by reference avoids this recursion.
-{ //Pass obj by value and in case we don't have our own copy constructor , compiler's generated  one will work perfectly when passing value in other functions
-  //but if we have our own copy constructor , then this one is used to copy the pass by valued object so it will still work for other functions but not when using own copy constructor and doing pass by value inside it
+{
+    //Pass obj by value and in case we don't have our own copy constructor , compiler's generated  one will work perfectly when passing value in other functions
+    //but if we have our own copy constructor , then this one is used to copy the pass by valued object so it will still work for other functions but not when using own copy constructor and doing pass by value inside it
 
     cout<<"Copy Constructor has been Called Successfully ! "<<endl;
     a=obj.a;  // We need obj.a as obj.a is int and a is also int , whereas obj itself is a refernce to the object n3. This point will be the recursive point if you don't write & sign in formal parameters.
@@ -62,6 +63,11 @@ int main()
 
     number n6 = n3; //Copy Constructor Invoked
     n6.display();
+
+    //Writing const with copy constructor paramters is necessary as it allows our object not to be changed as we are passing it by reference which allows changes in original object that was sent
+    //Secondly , const allows us to send const object while calling functions otherwise it will cause compilation error if we try to pass constant object
+
+
 
     return 0;
 }
