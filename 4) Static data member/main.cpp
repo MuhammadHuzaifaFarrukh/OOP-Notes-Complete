@@ -24,6 +24,11 @@ void emp::getcount()
     //id = 100;
     //Above line cannot be used as normal member variables / functions can't be used inside static member functions
     cout<<"The value of the count is " <<count<<endl;
+
+    //We can use local variables made by ourselves or the parameters passed from this static function
+    //We generally can't use or call other member functions as this function is not called by a specific object
+    //One way to call the non static member functions here is that we pass the object by reference in the paramter of this static function
+    //Then we can call the non-static member function using the object passed
 }
 void emp::setdata()
 {
