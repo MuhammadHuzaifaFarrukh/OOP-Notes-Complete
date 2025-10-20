@@ -57,7 +57,12 @@ int main()
 
 
 
-
+//Very important detail :
+// If you are using constructors of derived class (no member init list) , then the object of derived made makes compiler go to base class and call its default constructor either user one or compiler one
+// If it finds other than default constructor like it sees paramterized constructor but no default/blank then it gives errors as the compiler will now automatically try to call base class constructor from derived class constructor
+// If there is no constructor in the base class , then compiler makes one , fine. But if user doesn't make default/blank one and makes any other parameterized then it issues errors.
+// Using member initialization can tackle this issue
+// But always remember that if you are using any constructor from derived class and have many other constructors in base class then make sure to add one blank/default constructor there as well to avoid errors
 
 
 
