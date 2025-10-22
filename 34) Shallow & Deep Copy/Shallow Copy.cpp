@@ -15,7 +15,7 @@ public :
         name = nname;
         cgpaptr = ncgpaptr;
     }
-};
+}; 
 
 int main()
 {
@@ -30,3 +30,4 @@ int main()
 }
 
 //The default versions of BOTH the Copy Constructor and the Copy Assignment Operator perform a shallow copy.
+
