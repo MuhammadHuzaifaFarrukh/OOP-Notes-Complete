@@ -1,0 +1,63 @@
+//Rule of 0 : 
+/*
+The "Rule of Zero" is the modern C++ recommendation, stating that if a class requires defining any of the above special member functions (i.e., it manages resources), it probably shouldn't..Let the compiler handle all five members
+Define no one , like don't make copy constructor , destructor etc .
+You can make constructors (Default / Paramterized)
+
+
+
+*/
+
+//Rule of 3 :
+/*
+The Rule: If you explicitly define any one of the following three functions, you should explicitly define or delete all three:
+
+Destructor
+
+Copy Constructor
+
+Copy Assignment Operator
+
+*/
+
+
+
+//Rule of 5 : (Now this one is followed)
+/*
+If you explicitly define any one of the five resource-managing functions, you should explicitly define or delete all five:
+
+Destructor
+
+Copy Constructor
+
+Move Constructor
+
+Copy Assignment Operator
+
+Move Assignment Operator
+
+Even though compiler generates the default constructor for us , still its not in this list as they are related to resource management and even if we define our blank constructor then it does not restrict for other resource managing functions so that's also another reason. Defining blank constructor only excludes compiler generated blank constructor
+
+Although you can make some of them but here are some restrictions :
+Making destructor will not generate compiler's destructor , move constructor and move assignment operator
+Making Copy Constructor will not generate compiler's Copy Constructor and Move Constructor and Move Assignment Operator
+Making Copy Assignment will not generate compiler's Copy Assignment and Move Constructor and Move Assignment Operator
+Making Move Assignment will not generate compiler's Move Assignment and Copy Assignment Operator
+Making Move Constructor will not generate compiler's Move Constructor , Copy Constructor and Copy Assignment Operator
+
+
+//Defining any one forces you to define all (or delete them explicitly from function prototype to not use them )
+the other four functions to ensure correctness and efficiency.
+
+//By Defining we mean that either write all their functions explicitly like we do in code or write the below line and ask compiler to generate a default one ,
+this makes compiler generate the default one for you 
+Return_Type (if any) Function_Name( Parameters ) = default; 
+//By Deleting , we mean that we are never gonna use this function , not even by compiler 
+Return_Type (if any) Function_Name( Parameters ) = delete;
+
+
+Once you use = default or = delete, you cannot provide a custom definition.
+
+
+
+*/
