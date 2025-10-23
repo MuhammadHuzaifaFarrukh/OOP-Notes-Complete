@@ -126,6 +126,14 @@ ClassObj Obj = {1, {1,2,3,4,5} , new int[10] } ;
 //Your constructors should have no default arguments at all for this to work
 
 //If you make a MyClass() = default then this syntax to initialize won't work in newer C++ versions
+
+
+//If the data members are less than the values provided in the initialization list , then compiler issues errors
+//If the data members are more than the values provided in the initialization list , then the remaining data members are initialized to zero or null pointer as per their data types
+
+//Another point : 
+//If we make myClass arr[10] which is an array of 10 objects then , first all their constructors will get called
+//If this class only had x as its data member then we could init : myClass arr[10] = {1,2,3}; and rest of the objects would have x=0 and their constructors will be called and also due to this x , the constructors for first 3 objects will be called , if there is a parameterized one then that will be called on x value and if no constructor thn default one will be called for these 3 objects and also for the rest of them and set x=0 for them 
 */
 
 
