@@ -1,0 +1,18 @@
+Always ensure to make separate files for classes i.e a header file
+The Functions Implementations inside classes should be in another .cpp file 
+The .cpp file should have a reference of its class using #include "class_name.h"
+Use "#pragma once" on all these header files such that they will not be copied if this header is used directly or indirectly in program multiple times
+Use the header files or namespaces required to use in these files as needed
+Use the header files of base class and include them in the .h portion of the derived class as needed
+
+
+In main , we only write either this header file and .cpp file and compile and run
+OR we only write the header file and then compile by using command with both of their names and then execute it
+Also don't include any unnecessary user-defined header files in the .h files , this can cause compilation errors
+
+Difference between #include < > and #include " " :
+When we include a header file using "header_file_name.h" , compiler checks for the header file inside our folder , if it doesn't then it finds in the include directory. Also we can give complete path of our header file inside  this " " , its completely your choice. It works for both , standard header files and user-defined as well.
+
+
+
+When we use < > for header files , it only checks the include folder , so any user-defined header file won't be added or seen by compiler if we use < > for it unless user himself has put his header file there.
