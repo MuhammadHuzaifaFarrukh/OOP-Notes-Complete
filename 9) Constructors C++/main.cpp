@@ -12,7 +12,7 @@ using namespace std;
 //Complex() {} // This is what the compiler implicitly creates if we don't create one
 //If we create a constructor , of any arguments or type then compiler doesn't provide us with this default constructor above
 //The type of constructor which compiler usually makes for us is a blank constructor but we call it default as it initalizes all values to default / garbage
-
+//Compiler defined default/blank constructor sets the values to their default , but if we make non-parameterized constructor and do nothing in it , then the values are not init to default although this one is also a blank constructor but by user this time
 class Complex
 {
 private :
@@ -50,8 +50,8 @@ int main()
 
 
     //Default Constructor by user takes no arguments but can perform some operations in that function
-    //Default Constructor by compiler is blank constructor that takes no arguments and does nothing except initializing the values of class members to zero or randomly (garbage)
-    //If user makes his own default constructor then blank constructor is not required
+    //Default Constructor by compiler is blank constructor that takes no arguments and does nothing except initializing the values of class members to zero (in most cases though not guaranteed) or randomly (garbage)
+    //If user makes his own default constructor (non-paramterized) then blank constructor is not required
     //If user makes both default constructor that does something and a blank constructor then it gives errors
 
 
@@ -62,6 +62,6 @@ int main()
     //For this purpose , you should make a default or blank constructor by yourself whenever using the parameterized one
 
     //Also it is not mandatory that the blank (default) constructor by compiler or a default / blank by user with no operations in it will set the values of class member variables to zero as it sets them random (garbage) as well
-
+    //Though in most cases , the compiler's blank constructor sets values to their default values , if user makes his own with nothing in it , then it will surely give random values
     return 0;
 }
