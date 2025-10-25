@@ -30,6 +30,7 @@ class C : public  A , public virtual B
 
 
 //Constructors in Multiple Inheritance through Member Initialization List
+
 class Base1
 {
 private :
@@ -53,6 +54,8 @@ class Base2
 {
 private :
     int data2;
+
+
 public :
     //  Base2(){} Necessary if Object is not initialized yet
     Base2(int a)
@@ -68,7 +71,7 @@ public :
 
 };
 
-class Derived :  public Base2 , public Base1 //Changing Order here matters only for non-virtual classes , whichever is first is constructed
+class Derived :  public Base2, public Base1  //Changing Order here matters only for non-virtual classes , whichever is first is constructed
 {
 private :
     int derived1, derived2;
@@ -83,6 +86,7 @@ public:
     {
         cout<<"The Value of derived1 is : "<<derived1 <<endl;
         cout<<"The Value of derived2 is : "<<derived2 <<endl;
+        //cout<<"The Value of derived2 is : "<<derived2 <<endl;
     }
 };
 
@@ -97,6 +101,114 @@ int main()
     return 0;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//All local variables even if passed to member variables or the other classes in inheritance can be used in the constructor they were originally passed to
+//Changing values in member initialization inheritance of inherited members will be affected
+//Both shown in example below
+
+/*
+class Base1
+{
+private :
+    int data1;
+public :
+    //  Base1(){} Necessary if Object is not initialized yet
+    Base1(int a)
+    {
+        data1=a;
+        cout<<"Base1 Class Constructor Called "<<endl;
+    }
+
+    void printdata1()
+    {
+        cout<<"The Value of data1 is : "<<data1 <<endl;
+    }
+
+};
+
+class Base2
+{
+private :
+
+public :
+    int data2;
+    //  Base2(){} Necessary if Object is not initialized yet
+    Base2(int a)
+    {
+        data2=a;
+        //This shows the current value of data2 as Base2 constructor is called before Derived
+        cout<<"Base2 Class Constructor Called with Data2"<<data2<<endl;
+    }
+
+    void printdata2()
+    {
+        cout<<"The Value of data2 is : "<<data2 <<endl;
+    }
+
+};
+
+class Derived :  public Base2, public Base1  //Changing Order here matters only for non-virtual classes , whichever is first is constructed
+{
+private :
+    int derived1, derived2;
+public:
+    //Derived(){} // Necessary if Object is not initialized yet
+    Derived(int a, int b, int c, int d ) : Base1(a), Base2(b )      //Changing Order here will do nothiing
+    {
+        //Can use a and b still here with values that were passed , but first the Base1 and Base2 Constructors run first
+        //Even if a and b were somehow changed in the Base1 and Base2 constructors , they are still the old ones here in this constructor
+        //Using 'a' below :
+
+        data2 = a+100; //This changes the data2 and now current data2 is this value not from its constructors as this constructor runs after the Base2's constructor
+        derived1=c;
+        derived2=d;
+    }
+    void printdata3()
+    {
+        cout<<"The Value of derived1 is : "<<derived1 <<endl;
+        cout<<"The Value of derived2 is : "<<derived2 <<endl;
+        //cout<<"The Value of derived2 is : "<<derived2 <<endl;
+    }
+};
+
+
+int main()
+{
+    Derived huz(1,2,3,4);
+    huz.printdata1();
+    huz.printdata2();
+    huz.printdata3();
+
+    return 0;
+}
+*/
 
 
 
