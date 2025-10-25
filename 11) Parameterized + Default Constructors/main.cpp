@@ -125,6 +125,7 @@ ClassObj Obj = {1, {1,2,3,4,5} , new int[10] } ;
 //For this to work , your variables must be public
 //For this to work , constructor with no arguments must not be present (that's a blank / default one that does something)
 //Your constructors should have no default arguments at all for this to work
+//If you define any of the constructors , then althought the syntax works , instead of aggregate initialization , standard constructor based initialization happens and for this , suitable constructors must be there to avoid compilation errors ( {} calls non-paramterized , {some value} calls paramterized one )
 
 //If you make a MyClass() = default then this syntax to initialize won't work in newer C++ versions
 
