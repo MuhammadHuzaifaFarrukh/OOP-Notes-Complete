@@ -49,7 +49,8 @@ int main()
 }
 */
 
-//Also it is not mandatory that the blank (default) constructor by compiler or a default / blank by user with no operations in it will set the values of class member variables to zero as it sets them random (garbage) as well
+//Also it is not mandatory that the blank (default) constructor by compiler or a default / blank by user with no operations in it will set the values of class member variables to zero as it can set them random (garbage) as well
+
 //So you can either 1) Make a default constructor with setting value of each member set to zero or 2) Make a member initialization list in the blank / default constructor or you can also do that
 //3) When making an instance of a class you can define it as : Point P = {} , this sets all the member variables to zero
 //However this Point P = {} won't work if user has already made a default / blank constructor that does nothing
@@ -131,9 +132,13 @@ ClassObj Obj = {1, {1,2,3,4,5} , new int[10] } ;
 //If the data members are less than the values provided in the initialization list , then compiler issues errors
 //If the data members are more than the values provided in the initialization list , then the remaining data members are initialized to zero or null pointer as per their data types
 
-//Another point : (Array of Objects & Aggregate Initialization) : 
+//Another point : (Array of Objects & Aggregate Initialization) :
 //If we make myClass arr[10] which is an array of 10 objects then , first all their constructors will get called
-//If this class only had x as its data member then we could init : myClass arr[10] = {1,2,3}; and rest of the objects would have x=0 and their constructors will be called and also due to this x , the constructors for first 3 objects will be called , if there is a parameterized one then that will be called on x value and if no constructor thn default one will be called for these 3 objects and also for the rest of them and set x=0 for them 
+//If this class only had x as its data member then we could init : myClass arr[10] = {1,2,3}; and rest of the objects would have x=0
+//Now if there is no constructor , no paramterized or non-paramterized , then compiler assigns these values directly to object's member variables and also sets the uninitialized objects's data {} or not written objects to default even though we skipped not written object's initialization above , thier data members were also set to default values , this things goes for the array of objects and for single objects in the form Point P = {} for default , {some value} otherwise garbage usually
+//If we make any constructor i.e if we had made non-paramterized constructor or paramterized one , then this aggregate initializer would turn to standard constructor based array initializer and code might fail to compile if it doesn't find suitable constructor
+//Also if we make non paramterized constructor that does nothing , then again  for A arr[1] = { {} } which calls non-paramterized constructor will not set its value to default , as it did set to default when we used no constructor and compiler did direct initialization setting values to default for unspecified
+
 */
 
 
