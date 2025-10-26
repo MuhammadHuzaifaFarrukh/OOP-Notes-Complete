@@ -1,5 +1,0 @@
-Just look at the ++, + , += Functions to understand the code reusability and avoid code duplication
-You may ignore the global and main files and just go look Money.cpp file 
-Also Copy constructor and Copy assignment operators are overloaded as well
-
-These files are the solutions of the Exercise no 4 By the way
