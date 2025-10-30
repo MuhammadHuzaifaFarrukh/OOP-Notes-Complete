@@ -1,0 +1,67 @@
+/*
+class Base
+{
+public:
+    ~Base()
+    {
+        cout << "Base destructor" << endl;
+    }
+};
+
+class Derived : public Base
+{
+private:
+    int* data;
+public:
+    Derived()
+    {
+        data = new int[100];
+    }
+
+    ~Derived()
+    {
+        delete[] data;  // This won't be called!
+        cout << "Derived destructor" << endl;
+    }
+};
+
+int main()
+{
+    Base* ptr = new Derived();
+    delete ptr;  // MEMORY LEAK! Only Base destructor called
+    // Output: "Base destructor"
+    // Derived destructor NOT called ? data[] not deleted!
+}
+*/
+
+
+//If the base destructor were not virtual, delete ptr; would only call the Base destructor,
+//leading to a memory leak because the Derived part of the object would not be properly
+// cleaned up.
+
+//Detailed Explanation :
+/*
+What happens step-by-step:
+1) delete ptr is called
+
+2) Compiler checks destructor type:
+
+Is Base::~Base() virtual? ? YES
+
+3) Look up vtable:
+
+Follow the vptr in the object pointed to by ptr
+
+The object is actually a Derived object, and it contains a virtual destructor so its vtable has Derived::~Derived
+
+4) Call through vtable:
+
+Call Derived::~Derived() first
+
+Then automatically call Base::~Base() (compiler ensures this)
+*/
+
+//Key Rules :
+//Declare in base class
+//All derived destructors automatically become virtual
+//Declare virtual destructor in the base class whenever you have polymorphic inheritance - regardless of where the dynamic data lives. This ensures the entire destruction chain happens correctly because the Parent class destructor does not run
