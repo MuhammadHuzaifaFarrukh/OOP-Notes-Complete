@@ -1,0 +1,12 @@
+A namespace in C++ is a declarative region that provides a scope for the identifiers (names of types, functions, variables, etc.) declared within it.
+
+Its primary purpose is to prevent naming collisions in large programs by grouping related declarations and giving them a unique organizational name.
+
+A namespace is in header files used in different places there and to distinguish between naming issues of same namespace
+
+You can create your own namespaces either in separate files or the same program but add its reference if in another file. Whole STL library is in namespace std. Some Algorithm and functional functions are also in std.
+
+Using cout only is not a good practice or using namespace std , instead , use std::cout or use "using namespace std" in main only or the place where you want it.
+You can define where you want to use your namespace by using keyword in that scope or by scope resolution operator.
+
+
