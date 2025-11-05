@@ -8,8 +8,8 @@ constructor_name(argument List ...) : initialization section
 { .....  }
 initialization section will be like   variable ( value ) or variable (variable ) or variable ( function / member function ).
 
-
-
+//Only for Non-Static Data Members
+//We can assign values to Const Non-Static Data Members as well using this list
 
 */
 
@@ -18,13 +18,15 @@ initialization section will be like   variable ( value ) or variable (variable )
 class Test
 {
 private :
-    int b // , int a;   // Here declaration should be in the same order as the value initialization below otherwise output changes
+    int b ;// , int a;   // Here declaration should be in the same order as the value initialization below otherwise output changes
 
-    string name ; int a ; // Here we can write (b,a) as int b , a together or also like this with variables in between
+    string name ;
+    int a ; // Here we can write (b,a) as int b , a together or also like this with variables in between
 public :
 
-    Test(int i, int j) :   b(j) , a(i+b)  //Order Matters and changes output ; This line might create errors if you have declared a and b like this  : int a,b; . Declaration order matters here so declare like this int b,a; This might produce garbage value on some compilers.
-    { //After (:) sign , initializations must be less than or equal to no of variables of that type in class with order
+    Test(int i, int j) :   b(j), a(i+b)   //Order Matters and changes output ; This line might create errors if you have declared a and b like this  : int a,b; . Declaration order matters here so declare like this int b,a; This might produce garbage value on some compilers.
+    {
+        //After (:) sign , initializations must be less than or equal to no of variables of that type in class with order
 
         cout<<"Value of a and b is  : "<<a <<" and " <<b <<endl;
     }
