@@ -5,6 +5,7 @@ using namespace std;
 //Static Variables and Static Member Functions are used commonly in all the Objects
 //As we make normal members of a class , each object has its own members taking space
 //But static variables of a class are shared among each object of the same class
+//Static Data members don't use member initialization list as well
 //Static Member Functions only use static member variables
 
 class emp
@@ -12,6 +13,30 @@ class emp
 private:
     int id;
     static int count; //by default has value of zero , also give a reference outside the class to assign any value or to simply use it
+    //Cannot initialize it here , where declared.
+    //Give it value outside the class , where its reference is given
+
+
+    //====CONST STATIC VARIABLE ============
+
+    //For a Variable like :
+    //static const int abc;
+    //Can't be changed
+    //Can be declared here and initialized outside but then , no reassigning values as it is const
+    //Can be initialized right here , but if done here then no need to initalize in the refernce outside
+    //Can be initialized right here only for integer and char data types only and use inline keyword with it to use with others as well
+    //E.g : inline static const float p = 10.2;
+    //Inline works with all const static data types 
+
+    
+
+
+    //For Const Non-Static Data Members
+    //const int x;
+    //Value can be given here (for any data type)
+    //Value can be given using member initialization list
+    //Can't change value afterwards
+
 public:
 
     void setdata();
@@ -40,6 +65,7 @@ void emp::getdata()
 {
     cout<<"Your Employee Id is : "<<id<<" and the number of Employee is : "<<count<<endl;
 }
+
 int emp::count; //Necessary as all objects of this class will share the same static member variable named 'count'
 //Static Member Variable has scope global here and lifetime global as well and its value is shared between all the objects
 //Also these static member variables get memory and initialized any value once they are defined outside of their class before all other functions.
@@ -62,6 +88,8 @@ int main()
     gohan.setdata();
     gohan.getdata();
     emp::getcount();
+
+    gohan.getcount(); //We can use static data members or functions but it still is called as a shared for class only , not for particular object
 
     return 0;
 }
