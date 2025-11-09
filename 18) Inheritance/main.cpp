@@ -17,6 +17,7 @@ public:
     ~employee();
     float salary;
     int id;
+    //If you make static variables then it is inherited but still shared among all the classes it is inherited from and inherited in (base and all derived class)
 
 };
 
@@ -159,3 +160,4 @@ Class A->B & A->C then B & C -> D so there is hierarchical and multiple inherita
 
 //These are just names and the inheriting properties depend in which way you make derived class
 //Also you don't need to remember which type of inheritance to take as you can make a derived class in any way you think your task will work out
+
