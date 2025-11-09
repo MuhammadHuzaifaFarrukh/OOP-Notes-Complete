@@ -1,3 +1,0 @@
-Overload +,-,/,* , += , -=,*= , /= Operators 
-These are without code duplication , fully written each operator
-See the other Folder for Code Duplication Avoidance , "The Money Class"
