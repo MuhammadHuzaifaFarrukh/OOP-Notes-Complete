@@ -1,0 +1,7 @@
+You may do these parts after learning file handling and runtime polymorphism lectures
+
+Also overload only ifstream and ofstream 
+With fstream overload , you can't use istream , ostream , cin , cout as they are derived from separate classes
+So you can only use fstream obj in main and pass it as reference in function overload
+As with fstream there may be errors due to read write pointer moving together and you can't use them to 
+print on console so they are useless you may say
