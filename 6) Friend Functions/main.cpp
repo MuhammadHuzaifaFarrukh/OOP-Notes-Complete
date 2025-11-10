@@ -59,8 +59,6 @@ int main()
 
 
 
-
-
 //2)
 #include <iostream>
 
@@ -102,16 +100,6 @@ int main()
 
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -166,10 +154,6 @@ int main()
 
 
 
-
-
-
-
 4)
 #include <iostream>
 
@@ -202,23 +186,7 @@ int main()
 */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//Friend functions break the principle of encapsulation so we try to use them as minimum as possible
+//However we may use them :
+//We generally use friend functions just to overload the stream operators << and >> for inputting and outputting objects (object data)
+//We will learn this after discussing operator overloading in lec 41
