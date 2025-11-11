@@ -23,7 +23,7 @@ The double ampersand && is key: it allows the function to bind to temporary (rva
 The other object is the source from the resource will be moved, not copied.
 */
 
-
+  
 class A
 {
 private:
@@ -125,5 +125,6 @@ int main()
 //If you make any constructor from either copy / move , then compiler won't make any constructor whether its copy or move
 //If you make any assignment operator , then compiler won't make any assignment opperator whether its copy or move
 //If you make any destructor then compiler won't make that for you
+
 
 
