@@ -6,7 +6,7 @@ using namespace std;
 class Dozen
 {
 private:
-    int dozen, units;
+    int dozen, units;  
 
 public:
     
@@ -165,4 +165,5 @@ public:
             return false;
         }
     }
+
 };
