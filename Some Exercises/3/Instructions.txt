@@ -1,0 +1,49 @@
+Task 2: Class Rational
+Assume r1, r2, r3 are objects of class Rational. Overload following operators:
+- r1 + r2 add r1 and r2 and return a new object. Do addition by finding the gcd of denominators
+- r1 -= r2 subtract r2 from r1 and return current object. Do subtraction by finding the gcd
+- r1 * r2 multiply numerators and denominators and store in new object. Call normalize before returning new object
+- r1 == r2 create copy of both objects, call normalize for new objects. Compare new objects
+- ++r1 increment 1 in the rational number and return current object
+- r1++ increment 1 in the rational number but return previous state of the object
+- r1 /= r2 multiply numerator of current object with denominator of the second operand and store in current object. Similarly multiply denominator of current object with numerator of second object and store in denominator of current object. Call normalize function for current object and return current object
+- r1 * 2 take new object as copy of current object. Multiply numerator of new object by 2, call normalize for new object and return new object
+- r1 /= 3 Multiply denominator of current object by 3, call normalize before returning
+
+Write a function normalize to simplify numerator & denominators. Sample main() code:
+int main() {
+    Rational r1(2, 3);   // 2/3
+    Rational r2(4, 5);   // 4/5
+
+    cout << "Initial values:\n";
+    r1.show();   // 2/3
+    r2.show();   // 4/5
+
+    cout << "\nAddition (r1 + r2): ";
+    (r1 + r2).show();   // Expected new Rational object with sum
+
+    cout << "\nSubtraction (r1 -= r2): ";
+    (r1 -= r2).show();  // r1 becomes result of subtraction
+
+    cout << "\nMultiplication (r1 * r2): ";
+    (r1 * r2).show();   // new object returned
+
+    cout << "\nEquality check (r1 == r2): ";
+    cout << ((r1 == r2) ? "Equal" : "Not Equal") << endl;
+
+    cout << "\nPre-increment (++r1): ";
+    (++r1).show();      // r1 += 1, show updated value
+
+    cout << "\nPost-increment (r1++): ";
+    (r1++).show();      // show old value
+
+    cout << "After post-increment: ";
+    r1.show();          // now increased by 1
+    cout << "\nDivision by another Rational (r1 /= r2): ";
+    (r1 /= r2).show();  // divide current by r2
+    cout << "\nMultiplication by integer (r1 * 2): ";
+    (r1 * 2).show();    // new object, r1 unchanged
+    cout << "\nDivision by integer (r1 /= 3): ";
+    (r1 /= 3).show();   // modify current object
+    return 0;
+}
