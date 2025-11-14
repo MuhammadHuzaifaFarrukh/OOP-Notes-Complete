@@ -8,7 +8,7 @@ private:
     // Data Members : 
     int a=1,b=2,c=3; 
 public:
-    // Use Data Members Accessing by Member Functions which are in public section :
+    // Use Data Members Accessing by Member Functions which are in public section :  
     // Use setter and getter functions
     void setdata(int a,int b,int c);    // Setter function , its return is usually void 
     void getdata();    // Getter function , here its return type is void , usually it should return the data type that it should
