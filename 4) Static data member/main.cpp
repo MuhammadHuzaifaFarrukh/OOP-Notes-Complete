@@ -7,6 +7,7 @@ using namespace std;
 //But static variables of a class are shared among each object of the same class
 //Static Data members don't use member initialization list as well
 //Static Member Functions only use static member variables
+//Non-Static Member functions can use static data members as well but only the static member functions use local variables , static data members or the object's variables if any object is made there
 //Even in inheritance (which comes later) , static data members are inherited but shared among its base and their derived classes
 
 class emp
@@ -16,7 +17,7 @@ private:
     static int count; //by default has value of zero , also give a reference outside the class to assign any value or to simply use it
     //Cannot initialize it here , where declared.
     //Give it value outside the class , where its reference is given like : int emp::count = value ;
-    //You may use inline keyword with this and give value where its declared as well like : inline static int count = 15 ; 
+    //You may use inline keyword with this and give value where its declared as well like : inline static int count = 15 ;
     //But then you can't assign values or give its reference outside class like we do for normal static variables
 
 
@@ -28,9 +29,9 @@ private:
     //Can be initialized right here , but if done here then no need to initalize in the refernce outside
     //Can be initialized right here only for integer and char data types only and use inline keyword with it to use with others as well
     //E.g : inline static const float p = 10.2;
-    //Inline works with all const static data types 
+    //Inline works with all const static data types
 
-    
+
     //For Const Non-Static Data Members
     //const int x;
     //Value can be given here (for any data type)
