@@ -108,13 +108,15 @@ int main()
     //setprecision(n) , where n is the number of significant figures
     //If used fixed after setprecision(n) , then n is the number of decimal places
 
+    //We can invoke constructor also by Point p = 1 , if its constructor contains only one paramter
+
     return 0;
 }
 
 
 
 
- //Aggregate Initialization :
+//Aggregate Initialization :
 
 /*
 if your class contains the member variables like int a , int arr[5] , int *p ;
