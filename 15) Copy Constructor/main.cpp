@@ -55,13 +55,13 @@ int main()
     n1.display();
 
 
-    number n4(n3);  //n4 becomes just like n3
+    number n4(n3);  //n4 becomes just like n3  , Copy Constructor Invoked , Direct Initialization
     n4.display();
     n5=n3;   //Copy Constructor Not Invoked , Copy Assignment Operator used which is discussed in deep vs shallow copy
     //The Above line will give no errors and still assign values but not by using copy constructor
     //Copy Constructor is only used to assign values to a brand new object from a previously made object
 
-    number n6 = n3; //Copy Constructor Invoked
+    number n6 = n3; //Copy Constructor Invoked , Copy Initialization 
     n6.display();
 
     //Writing const with copy constructor paramters is necessary as it allows our object not to be changed as we are passing it by reference which allows changes in original object that was sent
