@@ -10,6 +10,46 @@ In main , we only write either this header file and .cpp file and compile and ru
 OR we only write the header file and then compile by using command with both of their names and then execute it
 Also don't include any unnecessary user-defined header files in the .h files , this can cause compilation errors
 
+===========FOR TEMPLATES ============
+For doing multifiling in templates , just use templates.h or templates.hpp file and put the declarations of the functions there.
+Then simply make templates.cpp file and put the implementation of the template.h / hpp functions there with template.h/ hpp included
+Then in main.cpp include both files.
+If your template uses a user defined data type like a class / struct etc then this template.h / hpp should have included that class/struct's .h file to instantiate properly
+It may also work if all your files like class.h , class.cpp are included in main and along with template.cpp and template.h / hpp then it will also work without putting class.h file in the template.h / hpp
+
+
+==========FOR GLOBAL FUNCTIONS===========
+Use global.h and global.cpp for implementations of global functions definition and implementation
+Use extern word for using any variable / const or # define if you want to declare it , and for array also , you can simply declare it
+extern int a; extern int arr[5];
+Use global.cpp to initialize them , and function definitions also
+
+
+==========FOR STATIC VARIABLES==============
+Static variables of a class are usually inside class.h and class.cpp , and static functions as well.
+But for the static variables / functions that are global , we can put static variables and functions in global.cpp and global.h
+But its not a good practice to use static functions without any class , or globally using them so we don't use them quite much 
+
+
+==========FOR DEFAULT VARIABLES==============
+For Default variables or arguments , just keep them in the functions prototype , and don't write them with value in function definition in the .cpp file for either global one or class one 
+
+
+==========FORWARD DECLARATION==============
+In Class Declarations
+For using function of one class being friend in another class
+Pointers in Return/Parameters of a class
+Class members as pointers/references
+
+
+==========USING #INCLUDE INSTEAD OF FORWARD DECLARATION============
+Function is implemented using members of a type (Usual Case like for classes , global var / func)
+Type is used as a value member (e.g., MyClass obj; A whole object)
+Paramters / Return Types of Objects by Value
+Class is used as a base class (inheritance).
+Template code using the type
+
+
 Difference between #include < > and #include " " :
 When we include a header file using "header_file_name.h" , compiler checks for the header file inside our folder , if it doesn't then it finds in the include directory. Also we can give complete path of our header file inside  this " " , its completely your choice. It works for both , standard header files and user-defined as well.
 
