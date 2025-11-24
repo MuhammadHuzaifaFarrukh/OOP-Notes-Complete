@@ -29,8 +29,9 @@ private:
     //Can be initialized right here , but if done here then no need to initalize in the refernce outside
     //Can be initialized right here only for integer and char data types only and use inline keyword with it to use with others as well
     //E.g : inline static const float p = 10.2;
-    //Inline works with all const static data types
-
+    //Inline works with all const static data types (C++ 17 and later)
+    //You may also use constexpr (C++ 11 and later)
+    //E.g : static constexpr double a = 100;
 
     //For Const Non-Static Data Members
     //const int x;
@@ -94,9 +95,6 @@ int main()
 
     return 0;
 }
-
-
-
 
 
 
