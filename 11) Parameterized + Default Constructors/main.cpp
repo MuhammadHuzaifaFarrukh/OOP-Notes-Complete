@@ -56,7 +56,7 @@ int main()
 //However this Point P = {} won't work if user has already made a default / blank constructor that does nothing
 
 //4) Making a default constructor but using it like Point()=default and then when making an instance of a class use again Point P = {} , this ensures all member variables set to zero
-
+//The Default Arguments in a constructor or any other function should be written at the end of all parameters and then we can call these functions / constructors even by not passing only the default args as required args must be put
 
 //Also while using the myclass() = default constructor , this constructor is the one provided by compiler even if you have made / used parameterized constructors
 //When you write myclass() = default;, you are telling the compiler, "I need a default constructor, but please generate it for me exactly the way you would have if I hadn't declared one."
