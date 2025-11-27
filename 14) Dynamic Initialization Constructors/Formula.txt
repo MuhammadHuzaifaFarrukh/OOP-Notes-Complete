@@ -1,6 +1,6 @@
 Formula for Simple Interest is  :     
 
-S.I = (P*R*T) where R = r/100.  
+S.I = (P*R*T) where R = r/100.    
 It calulates the amount which is to be added in original.
 Can be done using a loop but just this formula is recommended ...
 And later we can add this simple interest to our original amount in final answer.
@@ -19,4 +19,5 @@ And Principal amount remains the same , it does not change . If we have initiall
 'n' years . It can also be done using a loop , but again , this formula is recommended more as ' P ' has to be fixed for every iteration .
  
 But both , simple interest and amount of simple interest can be done using a loop where we keep adding our
+
 original amount to (P*R*T) formula .
