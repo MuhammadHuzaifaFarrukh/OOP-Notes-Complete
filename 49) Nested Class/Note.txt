@@ -1,11 +1,12 @@
-Inner Class Can Access Outer Private Members - CONDITIONAL (Make inner class a friend of outer class)
+Inner Class Can Access Outer Private Members without being friends of outer class.
 Outer Class Can Access Inner Private Members - CONDITIONAL (Make outer class a friend of inner class)
 Automatic lifetime management - inner objects destroyed with outer (if used as Composition)
 Memory embedding - inner objects are part of outer object memory
 Ownership - outer class owns the inner objects
 We CAN create Outer class objects inside Inner class METHODS, but NOT as data members
 we can also create Outer class pointers/references as Inner class data members
-we may make Inner class objects inside Outer class as data members but the inner class must be defined properly first 
+we may make Inner class objects/pointers/references inside Outer class as data members but the inner class must be defined properly first 
+Here both classes are dependent unlike composition or aggregation where the two classes are independent
 
 The Order of Constructor is that first inner class constructor runs then outer class and reverse is the order of the destructor.
 
