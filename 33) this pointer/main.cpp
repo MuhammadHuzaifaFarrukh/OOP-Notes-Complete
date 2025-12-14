@@ -28,20 +28,20 @@ void Car::setSpeed(int newSpeed)
 
 //Explicit call involves writing "this" keyword.
 // "this" stores the object address
-// (*this) or (this->) derefernces the address i.e it gives the object
+// (*this) or (this->) dereferences the address i.e it gives the object
 // Can be used to distinguish the objects member variables from the local ones with same names (local shadows member variables)
 // Can be used to make / call long chains of functions for any object (return type must be a reference object)
 // If we use normal object as return type then first function in the chain will work but others will give leave the original object untouched making our answer as the first function
 
-
-
+//Friend Functions that are global (not related to any class) have no this pointer
+//Only those member functions that belong to a class and are friends of other classes have "this" pointer
 class A
 {
 private :
 
 public :
     int a,b;
-    A& setdata(int a, int b) // Here & is must as we are returning a refernce of the object (original object) , otherwise a modified copy of the object will be returned which will change nothing in the further long chain in our original object
+    A& setdata(int a, int b) // Here & is must as we are returning a reference of the object (original object) , otherwise a modified copy of the object will be returned which will change nothing in the further long chain in our original object
     {
         //this pointer here distinguishes between the member variables and the local ones
         this->a = a;
