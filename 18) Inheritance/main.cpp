@@ -37,8 +37,6 @@ employee :: employee(int inp_id)
     salary=34.0;
 }
 
-
-
 class programmer : public employee //Derived Public Class
 {
 private:
@@ -62,9 +60,6 @@ public :
     }
 
 };
-
-
-
 
 programmer::programmer(int inp_id)  //Derived class automatically calls base class constructor  to use work on the constructors
 {
@@ -115,7 +110,10 @@ int main()
     return 0;
 }
 
+//Derived Class can access the Base Class Private / Protected / Public Data via inheritance or getter / setters that are public / protected or by marking as friend function / class or nesting member functions
+//Base class if wants to use  Derived Class Private Data then it needs to make friend function / class for that
 
+//Static data members are also inherited and become one per two class if there are two classes in inheritance
 /*
 
 Inheritance has 5 types :
@@ -160,4 +158,3 @@ Class A->B & A->C then B & C -> D so there is hierarchical and multiple inherita
 
 //These are just names and the inheriting properties depend in which way you make derived class
 //Also you don't need to remember which type of inheritance to take as you can make a derived class in any way you think your task will work out
-
