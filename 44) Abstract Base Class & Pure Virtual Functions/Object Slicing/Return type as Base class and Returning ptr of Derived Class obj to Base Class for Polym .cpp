@@ -48,6 +48,7 @@ int main()
 
     v->show();   //Contains Honda as name
     //This achieves polymorphic behavior
-
+    delete v;
     return 0;
 }
+
