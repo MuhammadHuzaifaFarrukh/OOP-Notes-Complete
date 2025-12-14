@@ -3,14 +3,15 @@
 using namespace std;
 
 //Only Member Functions having same name in 2 classes irrespective of parameters ,creates ambiguity when used in inheritance.
-//Same variables used in 2 different classes is allowed as well and do not create ambiguity . They are simply overwritten or previous one can be used using scope resolution operator in some inheritances or by using keyword etc
+//Same variables used in 2 different classes is allowed as well and do not create ambiguity . They are simply overwritten
+//or previous one can be used using scope resolution operator in some inheritances or by using keyword etc
 
 //Ambiguity in Multiple Inheritance
-
 
 class base1
 {
 public:
+    //For Functions in Function Hiding / Overwriting / Redefinition , only same name , no & types of parameters can be different
     void greet()   //Creates Ambiguity when inherited
     {
         cout<<"How are you ? "<<endl;
@@ -23,10 +24,7 @@ public:
     void greet()   //Creates Ambiguity when inherited
     {
         cout<<"Ki Haal Chaal ha , theek ho naa ? "<<endl;
-
     }
-
-
 };
 
 class Derived : public base1, public base2
