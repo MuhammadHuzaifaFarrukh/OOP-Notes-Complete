@@ -116,9 +116,12 @@ Rules :
 
 They cannot be static member functions
 They are accessed by object pointers
-Virtual functions can be a friend function of another class
+Virtual functions can be a friend function of another class , however a friend function cannot be virtual
 A virtual function in base class might not be used but be useful for derived class
 If a virtual function is defined in a base class , then there is no necessity of redefining it in derived class again. You can use the same virtual function of base class.
+For Virtual Functions , the base class and derived class must have the same name , same no and type of parameters and almost same return type
+//Different return type only accepted when a base class returns reference of base type and then derived class returns reference but of derived class type
+//Also if a base class returns pointer of base type and then derived class returns pointer of derived type
 
 
 //If we have a lot of derived classes in any type of inheritance then we only need to use virtual with the first one or the function which you want to become virtual so that the rest of the below of that will be affected only leaving the upper as normal.
