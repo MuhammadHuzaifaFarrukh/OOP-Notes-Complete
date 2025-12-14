@@ -12,7 +12,10 @@ using namespace std;
 // Public Members of Base Class are Public in Derived Class
 // Protected Members of Base Class are Protected in Derived Class
 
+//Derived Class can access the Base Class Private / Protected / Public Data via inheritance or getter / setters that are public / protected or by marking as friend function / class or nesting member functions
+//Base class if wants to use  Derived Class Private Data then it needs to make friend function / class for that
 
+//Static data members are also inherited and become one per two class if there are two classes in inheritance
 /*
 IMP NOTE:
 Private members of the base class are not accessible directly in the derived class,
@@ -69,7 +72,7 @@ void Derived::process()
 
 void Derived::display()
 {
-    cout << "The value of data 1 is : " << getdata1() << endl; // Data1 is private and not inheritable even though present in the derived object so that's why we access it through this inherited public function. 
+    cout << "The value of data 1 is : " << getdata1() << endl; // Data1 is private and not inheritable even though present in the derived object so that's why we access it through this inherited public function.
     cout << "The value of data 2 is : " << data2 << endl;      // Data2 and Data3 are public so they are easily accessible
     cout << "The value of data 3 is : " << data3 << endl;      // Data3 even private can be accessed using class methods
 }
@@ -164,6 +167,7 @@ int main()
    obj.process();
    obj.display();
 
+   //We either use nested member functions or use public functions that work upon the private data of the class
     return 0;
 }
 */
