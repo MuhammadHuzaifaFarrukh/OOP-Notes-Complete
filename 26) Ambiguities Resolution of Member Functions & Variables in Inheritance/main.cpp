@@ -5,7 +5,7 @@ using namespace std;
 //When derived class uses same name for its variable and functions as that in base class then it is called name hiding or function hiding
 //Functions might get hidden due to this (Function Hiding or Name Hiding)
 //Member variables also get hidden due to this (Name Hiding)
-
+//In Function Hiding , only name matters , not return type or parameters
 
 //Resolving Ambiguities in Member Functions and Variables in Single Inheritance
 //The case in local variables will be same as that of the static variables
@@ -33,10 +33,7 @@ public:
 
         cout<<"Hello Buddies"<<endl; //Uses its own function   Overwrites the previous one
         //Will use previous one if not overwritten
-
     }
-
-
 };
 
 int main()
