@@ -12,6 +12,9 @@ using namespace std;
 // Protected and Public Members of Base Class are Protected in Derived Class. They can be used for further inheritance but private access
 // Public Members become protected members meaning that they can be inherited if any further inheritance is used unlike private members and can also be accessed using the derived member functions , not by their base functions
 
+//Derived Class can access the Base Class Private / Protected / Public Data via inheritance or getter / setters that are public / protected or by marking as friend function / class or nesting member functions
+//Base class if wants to use  Derived Class Private Data then it needs to make friend function / class for that
+
 class Base
 {
 private:
@@ -56,7 +59,7 @@ class Derived : private Base
 // Public Access Modifier :
 // Private remains private (not inherited , still exists)
 // Public remains public
-// Protected remains protected 
+// Protected remains protected
 class Derived : public Base
 {
 private:
