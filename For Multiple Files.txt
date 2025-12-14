@@ -50,6 +50,15 @@ Include the file of parent class header file in child header file and include ch
 Then include this child header file in your main and compile by using command or include child .cpp file as well if you want to compile directly
 
 
+==========CONSTRUCTOR INITIALIZATION LIST (MEMBERS/INHERITANCE)=================
+If you have a constructor initialization list then write that function signature without the constructor initialization list in the .h file and write the function implementation with constructor initialization in the .cpp file.
+
+
+==============VIRTUAL================================
+For Virtual Functions (Non-Pure / Pure) , write their signature along with virtual keyword inside .h file and give their implementation if you want in the .cpp files without the virtual keyword. If you want to write override keyword then write in the .h file and don't write in the .cpp file.
+For Virtual Destructor (Non-Pure / Pure) , declare it inside .h file and it must be defined outside the class without virtual keyword.
+
+
 ===========FOR TEMPLATES ============
 For doing multifiling in templates , just use templates.h or templates.hpp file and put the declarations of the functions there.
 Then simply make templates.cpp file and put the implementation of the template.h / hpp functions there with template.h/ hpp included
