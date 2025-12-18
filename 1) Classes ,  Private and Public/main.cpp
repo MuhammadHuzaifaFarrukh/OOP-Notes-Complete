@@ -6,7 +6,7 @@ class emp
 { 
 private:  
     // Data Members :   
-    int a=1,b=2,c=3; 
+    int a=1,b=2,c=3;  
 public:
     // Use Data Members Accessing by Member Functions which are in public section :  
     // Use setter and getter functions
