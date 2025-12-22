@@ -74,6 +74,7 @@ class derived_class_name : {{Visibility Mode for 1st Class}}  {{1st Class_Name}}
 
 // Now making a multiple inherited class in practical implementation :
 
+//The Constructors of Base1, Base2 , Base3 will be called first and then Derived
 class Derived : public Base1, public Base2, public Base3 // and so on // Multiple Inheritance completed
 {
 private:
