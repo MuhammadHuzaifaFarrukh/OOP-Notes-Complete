@@ -27,7 +27,7 @@ int main()
 
     // 3. REDIRECT: Get the console's output buffer (cout.rdbuf()) and assign it
     //    to the internal buffer pointer of the 'file_out' object.
-    //    This is where RUNTIME POLYMORPHISM is exploited.
+    //    This is where RUNTIME POLYMORPHISM is set up.
     file_out.rdbuf(cout.rdbuf());
 
     // 4. Test: Any output to 'file_out' now goes to the console (screen) instead of the file.
