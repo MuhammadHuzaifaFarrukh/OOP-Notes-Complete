@@ -39,6 +39,11 @@ public:
     }
 };
 
+//istream contains internal pointer named _M_streambuf that is a base pointer and can point to derived classes
+//So this pointer is involved in the runtime polymorphism , can point to filebuf for file operations , or stringbuf for stringstream
+//Just the assignment of istream & = istream or ifstream object doesn't do polymorphism , it just sets it
+//The Real Polymorphic behaviour is done at the streambuf level and it decides which operation to do
+
 int main()
 {
     Student s1(101, "John", 85.5);
