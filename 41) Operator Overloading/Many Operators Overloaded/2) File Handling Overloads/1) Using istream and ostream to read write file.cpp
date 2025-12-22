@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// Polymorphism is involved, but not in the most obvious way. It happens primarily at the std::streambuf level when
+// Polymorphism is involved, and happens primarily at the std::streambuf level when
 // the stream object uses its connection to perform the actual character transfer. It happens at initialization of streams with rdbuf()
 // The ability of the std::ostream constructor to accept the pointer returned by std::ofstream.rdbuf() relies on inclusion polymorphism
 // The ability of the constructor to accept any derived buffer pointer is a form of Polymorphism (Runtime)
@@ -21,7 +21,8 @@ int main()
     std::ofstream file_out(filename);
 
     // b. Create a generic ostream object and connect it to the file_out's buffer
-    std::ostream os(file_out.rdbuf());
+    std::ostream os(file_out.rdbuf());      //Runtime Polymorphism setup (Typically , the same obj pointer = same obj , so not any different)
+
 
     // --- WRITE TO FILE using the generic ostream 'os' ---
     os << "Hello from a generic ostream object!" << std::endl;
@@ -38,7 +39,7 @@ int main()
     int number_read;
 
     // b. Create a generic istream object and connect it to the file_in's buffer
-    std::istream is(file_in.rdbuf());
+    std::istream is(file_in.rdbuf());   //Runtime Polymorphism setup (Typically , the same obj pointer = same obj , so not any different)
 
     // Check if the file was opened successfully
     if (file_in.is_open())
