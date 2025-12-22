@@ -31,6 +31,9 @@ public:
 
 int main()
 {
+    //We can also make const objects but then we have to use constructor to initialize every data member of that object
+    //And we won't be able to reinitialize again the data members as the object is constant
+    //Can only set or reinitialize the mutable data members
 
     return 0;
 }
@@ -40,4 +43,4 @@ int main()
 //These const and mutable are very helpful when we make an object using const keyword like : const Example e1;
 //Now its data can't be changed and it can also not call any member functions of its own that are non-constant
 //It will only call constant functions and data can be changed using mutable keyword , in this way we strictly ensure which data to change and which to not
-
+//Also we can have two functions with same name but one being non-const and other const after function ()
