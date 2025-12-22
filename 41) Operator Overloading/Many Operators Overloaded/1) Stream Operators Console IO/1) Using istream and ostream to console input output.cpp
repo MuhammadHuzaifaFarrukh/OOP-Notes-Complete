@@ -35,7 +35,7 @@ int main()
     //We can also read/write from file if we redirect their buffer to the file's pointer ifstream and ofstream objects
     //We can also use std::cout and redirect buffer so that it will be used to output in the file
 
-    // Polymorphism is involved, but not in the most obvious way. It happens primarily at the std::streambuf level when
+    // Polymorphism is involved, and happens primarily at the std::streambuf level when
     // the stream object uses its connection to perform the actual character transfer. It happens at initialization of streams with rdbuf() above
     // The ability of the std::istream constructor to accept the pointer returned by std::cin.rdbuf() relies on inclusion polymorphism
     // The ability of the constructor to accept any derived buffer pointer is a form of Polymorphism (Runtime)
