@@ -1,0 +1,56 @@
+Inheritance: The "Is-A" Relationship
+
+Inheritance establishes a hierarchical relationship where one class (the subclass or derived class) acquires the properties and behaviors (fields and methods) of another class (the superclass or base class).
+
+
+
+Relationship Type: "Is-A" (e.g., A Dog is a kind of Animal).
+
+
+Mechanism: The subclass extends the superclass.
+
+
+Code Reuse: The subclass directly reuses the code of the superclass.
+
+
+Coupling: It results in tight coupling because the subclass is dependent on the internal implementation of the superclass. Changes to the superclass can break the subclass.
+
+
+Example:
+
+
+Dog inherits from Animal.
+
+
+Car inherits from Vehicle.
+
+
+
+
+
+Aggregation: The "Has-A" Relationship
+
+Aggregation is a form of association where one class (the "whole" or container) contains an object of another class (the "part"). The container uses the functionality of the contained object.
+
+
+
+Relationship Type: "Has-A" or "Part-Of."
+
+
+Mechanism: The whole class holds a reference to the object of the part class as a member variable.
+
+
+Code Reuse: The whole class delegates tasks to the part object to reuse its functionality. This is often called composition over inheritance.
+
+
+Coupling: It results in loose coupling because the whole object interacts with the part object only through its public interface, not its internal implementation.
+
+
+Lifetime: In Aggregation (the weaker form), the "part" object can exist independently of the "whole" object.
+
+
+Example (Aggregation): 
+A Department has a collection of Employees. 
+If the department is dissolved, the employees still exist.
+
+
