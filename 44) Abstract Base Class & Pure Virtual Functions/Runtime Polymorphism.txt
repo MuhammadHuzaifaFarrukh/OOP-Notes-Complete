@@ -1,0 +1,16 @@
+Pure Virtual Functions / Virtual Functions are required to achieve runtime polymorphism.
+
+We use pure virtual functions (also called abstract functions) when our base class object doesn't have any meaning of its own like Shape doesn't have any meaning unless we make an object of Triangle or Square etc
+Then we may use virtual functions if our base class has some meaning e.g Player may have a function attack that deals default damage , and same another special player may do some more damage so we need to have Player objects for this purpose and we use virtual functions (non pure virtual functions) instead of pure ones
+
+
+Runtime Polymorphism requires :
+1) Inheritance (Base class and Derived Class)
+2) Virtual Functions (Pure or Not)
+3) Base Class Pointer / Reference
+
+We use Base Class Pointer / Reference to Point to a Derived Class(es) object or even base class object.
+This provides the set up for runtime polymorphism
+Then when we call a function that is virtual , real runtime polymorphism happens at this point when function overriding is done
+ 
+How a Virtual function works is given in (43) Part in Vtable Explanation
