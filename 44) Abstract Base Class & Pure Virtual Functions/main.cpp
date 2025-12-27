@@ -12,7 +12,7 @@ protected :
 public :
     //   StGamer(){} //Required if not initialized object in first line (Blank Constructor)
     StGamer(string, float);
-    virtual void display()=0;  //It is a pure virtual function which says that if used , then it must be redefined in other derived classes which also violates the creation rule of virtual class .If we leave any one not redefine then it will throw error
+    virtual void display()=0;  //It is a pure virtual function which says that if used , then it must be redefined in other derived classes which also violates the creation rule of virtual class .If we leave any one not redefine then it will throw error.Pure Virtual Function is also called Abstract function
     //Also the class where we make pure virtual functions cannot have any instances
     //Only objects not allowed , we can make its pointers , addresses , references etc
 
