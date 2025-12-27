@@ -182,6 +182,7 @@ D
 //so if all classes are empty then we see that D object has a size of either 8 or 16 bytes
 //In D's memory it contains , B Data , C Data , D Data , A Data (Shared)
 //Virtual Class Data is always moved to the end
+//If a class contains its own vbptr , then it is always at the first before any data members. (in this case D uses from B and C and doesn't have its own vbptr)
 
 */
 // If D : B,C then class D takes shared data of A through B
@@ -275,6 +276,7 @@ D
 //Now class D contains C as sub object , and D and C both share B
 If all classes are empty and we create an object of class D , and check size of its object then it will be 4 bytes (which is the vbptr)
 //In D's memory it contains , C Data , D data , B data
+//If a class contains its own vbptr , then it is always at the first before any data members. (in this case D uses from C and doesn't have its own vbptr)
 */
 //Also when the constructor call runs , and class D virtual public B , public C object is created then two things happen
 //B is created first as virtual classes are constructed before normal ones
