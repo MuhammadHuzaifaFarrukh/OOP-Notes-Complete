@@ -1,0 +1,23 @@
+==================FOR COMPOSITION======================
+If we want to store one class object inside another class object , that are not related then they must have same memory layout , meaning that if one class has data members like : int,  string , int ,string , then the other class must also have memory layout like : int, string , int , string and they both must not have any virtual functions or virtual base class .
+We can use either sizeof(data_type) or sizeof(identifier) , both work fine  in case of normal objects in composition or normal storing 
+We may store the objects data by data member which is more good idea (manual serialization)
+
+
+
+==================FOR INHERITANCE======================
+In inheritance you can use the derived object  to store the base class object only if they don't contain any virtual functions or any virtual base classes. If these conditions fulfill then we can store / read the base object inside derived object.
+We can also use base object to store / read the derived object which results in the object slicing.
+The Reason is that Memory layout changes once the classes have virtual functions or virtual base classes so this will not be stored on correct places inside the object's memory
+We should use sizeof(data_type) as we need to specify which type of objects we need to store / read as only that objects will be read / stored from the base / derived objects
+sizeof(base_object) stores the base part of derived object
+sizeof(base_object) reads only the base part inside derived object
+sizeof(derived_object) will perform object slicing if the object we are storing into is the base object
+
+
+==================VERY IMP======================
+For pointers that point to either heap / stack , for any data type (int *, float * , char * , or std::string etc) , always follow the pointer to write the actual data there instead of the memory address. This is because memory addresses are random and keep changing every time we start a new program so we should be careful about that. This will crash the program if we just store the pointers (memory addresses). which is called manual serialization.
+
+
+
+Safety is that use the exact object's type which you want to read / store from the file
