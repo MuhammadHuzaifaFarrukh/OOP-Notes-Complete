@@ -1,0 +1,4 @@
+Make a text editor that will have some features like creating , opening , deleting , adding , finding something from a text file etc .
+You may use string type instead of char array for easiness
+Also can use other methods of std::string , but don't use too much
+Logic building is focused here  
