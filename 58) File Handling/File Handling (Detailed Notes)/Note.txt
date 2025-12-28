@@ -1,0 +1,6 @@
+This Detailed File Handling only teaches file handling with functions , no classes , no templates here ,
+also after file handling , images in file handling is also covered
+Its optional if you want to know about this as you may already know about file handling , but if you want to upgrade your skill level , see the image in file handling (Not Required)
+
+
+For OOP , you should know the basics from here so that you can print your instances data and then read from them etc
