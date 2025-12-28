@@ -1,0 +1,74 @@
+C++ Complete File Classes Hierarchy (Older C++ 98 Versions): 
+      ios_base
+          |
+         ios	      (Separate Header files)
+    /            \
+   /              \
+istream       ostream (Separate Header files)
+  \               /
+   \             /
+      iostream	      (A Class that is in the Header File Inherited from istream & ostream)
+         |
+         |
+      fstreambase  (Not a header file , this class was inside fstream)
+    /           \
+   /             \
+ifstream       ofstream (Separate Header files)
+   \             /
+    \           /
+       fstream	(A Class that is in the Header File Inherited from ifstream & ofstream)
+
+
+Class Relationships:
+1) fstreambase
+Base class for file streams
+Direct child of iostream
+
+2) istream (Input Stream)
+Parent: ios
+Used for input operations
+
+3) ostream (Output Stream)
+Parent: ios
+Used for output operations
+
+4) ifstream (Input File Stream)
+Parents: istream (indirect) and fstreambase
+Used for reading from files
+
+5) ofstream (Output File Stream)
+Parents: ostream(indirect) and fstreambase
+Used for writing to files
+
+6) fstream (File Stream)
+Parents: iostream (which inherits from both istream and ostream , (indirect)) and fstreambase(indirect) , ifstream (direct) and ofstream (direct)
+Used for both reading and writing. fstream uses inheritance to do file I/O and includes their headers to do so also as they are in separate classes
+
+
+
+HEADER FILES :
+#include <ios>               // ios_base, ios
+#include <istream>          // istream , ios , ios_base
+#include <ostream>         // ostream , ios , ios_base  
+#include <fstream>        // ifstream, ofstream, fstream, fstreambase , whole iostream almost (indirectly)
+#include <iostream>      // cin, cout, cerr, clog , istream , ostream  , ios , ios_base 
+
+
+
+
+Current and Standardized Modern C++ Hierarchy :
+                     ios_base		
+                        |
+                 basic_ios<CharT,Traits> 			(A Separate Header File)
+                   /            \
+basic_istream<CharT,Traits>  basic_ostream<CharT,Traits>	(Separate Header Files)  
+                   \            /
+             basic_iostream<CharT,Traits> <-- iostream header file that contains iostream class
+                        |
+            basic_fstream<CharT,Traits>   <-- file stream class (header) , there is no fstreambase , only one class that extends ifstream , ofstream   
+                        |
+         ---------------------------------------
+         |              |                      |
+basic_ifstream  basic_ofstream         (other specializations)	(No Header files , only classes declared & defined)
+
+The Header File fstream in old hierarchy was derived from the ifstream and ofstream , no fstreambase class anymore in modern C++ , now fstream is derived from iostream and it just extends ifstream , ofstream header files and defines all 3 classes in its header file fstream to use the functionalities for both file I/O. So fstream itself uses ifstream and ofstream by inheritance in a single file rather than including their headers from different files / classes
