@@ -1,0 +1,14 @@
+For doing File Handling for Images , you need to use Irfan View , a very portable and light software .
+With this you can view and see the image data.
+Link : https://www.irfanview.com/
+
+By using this information , you will know how to change , modify and write data in images so that you can work with them.
+You can store them in File.
+You can do all the operations of image editing using file handling , but you need to know of the basic concepts about it first.
+We will work with PPM and PGM files both in binary and ASCII .
+An Image is like a combination of numbers stored in a 2D grid (matrix).
+PGM file is a portable gray map image which is a white and black image with each number representing a pixel representing a specific color
+PPM file is a portable pix map image which is a colored image with each 3 numbers representing a pixel representing a specific color. 
+
+Each Image picture has a header , containing its info about extension , then metadata containing info about width , height of the image and then maximum value . Then it contains the Image data . 
+Header and Metadata may vary in various image formats but usually these things are definitely present.
