@@ -16,7 +16,7 @@ public:
 
     number(int );
     number(number &); //Copy Constructor , You need to delete this and definition if you want to generate the compiler copy constructor.But if we only write a copy constructor , then compiler will generate an error to find the non-parameterized constructor
-    //Using const is generally good as without it :
+    //Using const is generally good because a non-const or const obj as argument can go to the const obj parameter but const obj argument will throw error on being assigned to a non-const parameter
     void display();
 
 };
@@ -104,5 +104,4 @@ Signature: Number& operator=(const Number& obj)
 This is called when an object that already exists is assigned the value of another existing object.
 e.g above : Number n1 , n2 ; n1 = n2;
 */
-
 
