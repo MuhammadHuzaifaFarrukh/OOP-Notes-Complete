@@ -1,0 +1,28 @@
+ASSOCIATION :
+We may have already used one class object inside the member function of another object as parameter or declared there so now we should know its general term.
+Association is the most basic and general relationship between two classes. While Composition and Aggregation describe a "Whole-Part" relationship, Association describes a simple "Uses-a" / "Knows a" relationship where two objects interact but remain completely independent.
+
+
+1. Key Characteristics
+Relationship: It is often described as a "peer-to-peer" relationship rather than a "parent-child" one.
+
+
+Lifecycle: The lifetimes of both objects are completely unbounded and independent of each other. If the "Outer" (using) class is destroyed, the "Inner" (used) class object is unaffected.
+We only need the outer class object in association to invoke the member function for the associated class obj being passed as reference or as pointer or by value (copy). If we pass copy of the object then copy constructor is invoked and must be customized incase the associated object class has dynamically allocated data members.
+Another form of Association is that we make a local object (stack-based not on heap) of another class object (this one is called associated object) , as its lifetime ends as soon as the function ends. (This is called Dependency which is the weakest form of Association).
+
+Ownership: We say the outer class "USES" / "Knows" the inner class object rather than owning it. There is no ownership involved.
+Dependency: Both objects can exist without each other.
+
+
+2. Implementation in C++
+Association is usually implemented by passing an object to a specific function rather than keeping it as a permanent member. If it is kept as a member, it is strictly for temporary communication. (which still performs aggregation / composition if kept as a member)
+
+3. FRIEND CONCEPT :
+If one class uses other class' object as associated object in its member functions then this function must be a friend in the associated object's class to access the private data members of the associated object in that member function called by one class.
+We use friend access in association much.
+
+EXAMPLE :
+Function Parameters (Most Common):
+
+void Doctor::treat(Patient *p); // Doctor uses Patient object Pointers or References: Similar to aggregation, but the pointer is often set and cleared frequently rather than being assigned once in a constructor
