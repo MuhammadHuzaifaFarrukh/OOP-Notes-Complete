@@ -39,6 +39,7 @@ public:
             cout << "Conversion Copy Assignment called: Transforming ClassB to ClassA" << endl;
             this->a_data = objB.getData();
         }
+        return *this;
     }
 
     void display()
@@ -62,3 +63,4 @@ int main()
 
     return 0;
 }
+
