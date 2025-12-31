@@ -2,8 +2,6 @@
 
 using namespace std;
 
-
-
 class number
 {
 private:
@@ -17,7 +15,7 @@ public:
     }
 
     number(int );
-    number(number &); //Copy Constructor , You need to delete this and definition if you want to generate the compiler copy constructor.But if we only write a copy constructor , then compiler will generate an error
+    number(number &); //Copy Constructor , You need to delete this and definition if you want to generate the compiler copy constructor.But if we only write a copy constructor , then compiler will generate an error to find the non-parameterized constructor
     //Using const is generally good as without it :
     void display();
 
@@ -55,18 +53,26 @@ int main()
     n1.display();
 
 
-    number n4(n3);  //n4 becomes just like n3  , Copy Constructor Invoked , Direct Initialization
+    number n4(n3);  //n4 becomes just like n3 , Direct Initialization
     n4.display();
     n5=n3;   //Copy Constructor Not Invoked , Copy Assignment Operator used which is discussed in deep vs shallow copy
     //The Above line will give no errors and still assign values but not by using copy constructor
     //Copy Constructor is only used to assign values to a brand new object from a previously made object
 
-    number n6 = n3; //Copy Constructor Invoked , Copy Initialization 
+    number n6 = n3; //Copy Constructor Invoked , Copy Initialization
     n6.display();
 
     //Writing const with copy constructor paramters is necessary as it allows our object not to be changed as we are passing it by reference which allows changes in original object that was sent
     //Secondly , const allows us to send const object while calling functions otherwise it will cause compilation error if we try to pass constant object
 
+
+
+    //Also if for any type of function normally or member function or constructor , paramter is of obj/var& type while our calling argument is constant object/var then compiler throws error
+    //When our parameter is of const obj/var& type or const obj/var type or obj/var type and our calling arg is constant object then only it is allowed
+    //When our calling argument is of non-constant , then it can bind to any type of const or & or without both or with both
+    //These things can/may differ if we have defined our own copy constructor and copy assignment operator but remain same when we use compiler generated constructor
+
+    //Similarly , it can also vary on the return type basis
 
 
     return 0;
@@ -98,14 +104,5 @@ Signature: Number& operator=(const Number& obj)
 This is called when an object that already exists is assigned the value of another existing object.
 e.g above : Number n1 , n2 ; n1 = n2;
 */
-
-
-
-
-
-
-
-
-
 
 
