@@ -58,7 +58,8 @@ int main()
 
     Car c2 = v; //Here error is thrown if we don't write customized Copy Constructor
     c2.show();
-    //We can make the copy constructors / copy assignment operators and many more in inheritance or even in composition to compare these objects of different / similar classes
+    //We can make the copy constructors / copy assignment operators and many more in inheritance or in unrelated classes to compare these objects of different / similar classes
 
     return 0;
 }
+
