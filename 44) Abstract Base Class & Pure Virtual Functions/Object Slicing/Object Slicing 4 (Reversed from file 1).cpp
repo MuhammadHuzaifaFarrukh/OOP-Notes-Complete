@@ -42,6 +42,7 @@ public:
         {
             this->name = obj.get_name();
         }
+        return *this;
     }
     Car(const Vehicle& obj) : Vehicle("Nothing")    //If you don't write this constructor init member list for Vehicle then compiler throws error as in inheritance , whether constructor or copy one , it needs base constructor to make object of the base class inside derived object
     {
@@ -62,4 +63,5 @@ int main()
 
     return 0;
 }
+
 
