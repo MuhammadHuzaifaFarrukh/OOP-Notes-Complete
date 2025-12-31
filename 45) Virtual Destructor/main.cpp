@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 
 using namespace std;
 
@@ -19,7 +19,9 @@ using namespace std;
 //in the base class - regardless of dynamic memory!
 //Although works fine in this case (where no dynamic alloc) but good practice to use it even here in this case
 
-// 3) If we have dynamic allocations and we are using inheritance and using base ptr to point derived obj
+//============MOST IMPORTANT====================
+// 3) If we have dynamic allocations of data members of any class / file opening or closing / database connections closing etc
+//and we are using inheritance and using base ptr to point derived obj where derived obj is on heap
 
 // Explained simple (uses) :
 // Polymorphic Deletion ,  Class has virtual methods
@@ -75,16 +77,11 @@ public :
 //The Base destructor is called second.
 
 
-
-
-
-
 int main()
 {
     A * ptrA = new B;
     delete ptrA;
     // ptrA = nullptr; //Not necessary
-
 
     return 0;
 }
