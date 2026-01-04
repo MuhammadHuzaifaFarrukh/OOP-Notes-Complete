@@ -1,0 +1,33 @@
+logic_error and runtime_error are explicit exception handlers
+
+bad_alloc , bad_cast and bad_function_call are implicit exception handlers meaning that we don't need to write throw for them , we just catch them using exception & or their type reference and their what() function only tells the type of error so we can't write our own message unless we define our own custom class that is inherited from bad_alloc or bad_cast or bad_function_call and then override the what() function
+
+Sometimes its user's choice that where he wants to place the exception and where to catch them.
+E.g we can throw the exception inside any function and catch them inside that function or we may catch them where it was called.
+Usually we catch from where it was called but this totally depends on choice of the user
+
+==================FOR EXCEPTIONS INSIDE CONSTRUCTORS=======================
+For Constructors that are without initialization list , we can do exception handling inside the body of constructor and catch them there (completes obj)
+or we can catch inside main (doesn't complete the object).
+For Constructors of a class that use initialization list if want exception handling then we use try catch block right there :
+myClass() try data(s) { }
+catch(...){Some MSG}
+We use re-throw for this as well , and for this we need to have a try catch block inside the part where this object was made (usually main() )
+This is also known as function try block
+
+
+==================FOR MULTIPLE CATCHES======================
+//Inside each catch block you write all the types as exception& instead of the specific ones which will work
+//But we should always write specific class type & to catch errors as it makes code readable
+//E.g if we want to catch runtime_error , logic_error and bad_alloc then all 3 can get caught using exception& inside 3 catches 
+//But writing runtime_error& , logic_error& and bad_alloc& makes code readable
+
+
+===============USING CUSTOMIZED CLASS vs PREDEFINED CLASS FOR EXCEPTION========================
+We use customized classes inherited or by composition to use our own customized messages and codes/values for exception handling. We can inherit from either the exception , runtime_error , logic_error , bad_alloc , out_of_range etc classes as they make work also easier if we are writing our own class code and then we simply use the basic predefined classes for exception which may work but for showing exact values or data which disturbed can be done through customized inherited / separately composition classes.
+While , if our work is not much , and basic totally then we can rely on the basic predefined classes that will do our work by just our customized message.
+
+
+===============USING ONLY ONE CLASS=======================
+We can throw error of runtime_error and logical_error on the same type of error (other than those that are implicit) , and similarly we can catch them , which will get the error , but we won't know which type of error occurred.
+E.g if I want to catch division by zero error which should be caught by runtime_error but if I place throw logic_error then it still will be caught but will be poor readability and poor design so make sure to throw the correct error type on the error which is meant to be.
