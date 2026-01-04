@@ -1,0 +1,29 @@
+The Exception Mechanism
+
+A. Throwing an Exception
+When a throw statement is executed:
+
+
+The normal flow of execution is immediately suspended.
+
+
+The runtime system attempts to find a suitable catch handler by unwinding the call stack (i.e., popping function calls off the stack) until it finds a try block.
+
+
+As the stack is unwound, the destructors of all local objects in the terminated scopes are automatically called. This critical feature ensures proper cleanup and is the foundation of RAII (Resource Acquisition Is Initialization).
+
+
+B. Catching an Exception
+
+The runtime system matches the type of the thrown object (the exception) to the parameter type in the catch blocks.
+
+
+The first matching catch block is executed.
+
+
+Once the catch block finishes, execution continues with the code immediately following the entire try/catch block.
+
+
+throw and catch only take one arguments :
+throw executes, taking one value to signal the error.
+ while catch declares what type of exception it is prepared to receive
