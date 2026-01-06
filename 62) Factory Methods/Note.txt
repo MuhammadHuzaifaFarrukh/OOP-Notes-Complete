@@ -1,0 +1,23 @@
+FACTORY METHOD :
+A Factory Method is a design pattern that focuses on decoupling the process of object
+creation from the code that uses the object.
+It provides an interface (usually a class) for creating an object, but allows subclasses
+to decide which class to instantiate. The goal is to let a class defer the instantiation logic to its children.
+
+We implement factory method using :
+1) Inheritance ,often more than one type
+2) Polymorphism ( Pure Virtual Functions) 
+3) Raw Pointers or Smart Pointers
+
+Although pure virtual functions are not strictly necessary , but it depends on the programmer , if you want to instantiate base class , use only virtual functions and if not then use pure virtual functions
+Similary use of smart pointers is recommended but you may use raw pointers which is discouraged
+
+ ==== 4 MAIN COMPONENTS OF FACTORY METHOD ====
+
+1) Product (Interface): The base class for the objects being created (e.g., Document).
+
+2) Concrete Product: The actual classes instantiated by the factory (e.g., WordDocument, PdfDocument).
+
+3) Creator (Interface): The base class that declares the Factory Method (e.g., DocumentApp).
+
+4) Concrete Creator: The subclasses that implement the Factory Method to produce a specific concrete product (e.g., WordApp, PdfApp).
