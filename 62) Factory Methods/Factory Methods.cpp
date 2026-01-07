@@ -11,6 +11,7 @@ using namespace std;
 //to decide which class to instantiate. The goal is to let a class defer the instantiation logic to its children.
 
 
+
 // ==== 4 MAIN COMPONENTS OF FACTORY METHOD ====
 
 //1) Product (Interface): The base class for the objects being created (e.g., Document).
@@ -188,6 +189,7 @@ public:
     }
 };
 */
+
 
 
 
