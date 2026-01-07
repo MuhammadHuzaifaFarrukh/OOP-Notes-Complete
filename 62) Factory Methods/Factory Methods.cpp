@@ -12,6 +12,7 @@ using namespace std;
 
 
 
+
 // ==== 4 MAIN COMPONENTS OF FACTORY METHOD ====
 
 //1) Product (Interface): The base class for the objects being created (e.g., Document).
@@ -189,6 +190,7 @@ public:
     }
 };
 */
+
 
 
 
