@@ -18,7 +18,7 @@ public:
     // int get_c(){return c;}
 };
 
-void emp:: getdata( )
+void emp:: getdata()
 {
     // Below line is equivalent to ( object_name which called getdata() ).setdata(33,44,55)
     setdata(33,44,55);    // You may use a function inside another function , and this function is called for the same object (current obj) for which the getdata was called
