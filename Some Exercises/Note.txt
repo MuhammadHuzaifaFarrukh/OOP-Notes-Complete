@@ -1,7 +1,0 @@
-Here are some exercises for you to solve :
-1) Read the instructions carefully 
-2) Solution is given in the files right beside the instructions so make sure to match your answer
-3) Your approach may be more better and good even if answer doesn't match 
-
-DON'T HESITATE & CODE 
-GOOD LUCK :)
