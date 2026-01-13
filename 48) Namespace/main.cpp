@@ -37,3 +37,30 @@ int main()
 
 
 
+
+//Difference between Named and Unnamed Namespaces
+//Unnamed Namespaces are used only in the file where they are made ( Equivalent to a Private Namespace like private in classes)
+namespace
+{
+// This is "private" to this specific .cpp file
+void localHelper() {}
+}
+
+
+//Named Namespaces can be used anywhere in other files as well (Always Public if you use in other files)
+namespace MyLibrary //Can be used anywhere
+{
+void publicFunction()
+{
+    localHelper(); // Only usable here (unnamed namespace function)
+}
+}
+
+
+//Hiding a Namespace :
+//1) Use Unnamed Namespaces
+//2) Use a namespace with names : "internal" , "detail" , "impl"
+//In the 2nd option , the namespace is not actually hidden technically but socially.
+//It relies on a widely accepted C++ convention: developers agree that anything inside a
+//namespace named detail, internal, or impl is "private" and shouldn't be touched,
+//even though the compiler allows it.
