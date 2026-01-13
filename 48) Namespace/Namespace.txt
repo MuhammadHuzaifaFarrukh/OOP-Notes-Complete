@@ -10,3 +10,12 @@ Using cout only is not a good practice or using namespace std , instead , use st
 You can define where you want to use your namespace by using keyword in that scope or by scope resolution operator.
 
 
+Namespaces can be Named or Unnamed
+1) Named are always public to the other files
+2) Unnamed are like private namespaces that can be used only in that local .cpp
+
+Hiding Namespaces :
+1) Use Unnamed Namespaces
+2) Use a namespace with names : "internal" , "detail" , "impl"
+In the 2nd option , the namespace is not actually hidden technically but socially.
+It relies on a widely accepted C++ convention: developers agree that anything inside a namespace named detail, internal, or impl is "private" and shouldn't be touched, even though the compiler allows it.
