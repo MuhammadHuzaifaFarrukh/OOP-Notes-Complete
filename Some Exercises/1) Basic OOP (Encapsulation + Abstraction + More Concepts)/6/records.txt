@@ -1,0 +1,7 @@
+[Student: Umer | GPA: 4.1 | Scholarship: YES | Remaining Fee: 0]
+[Student: Ali | GPA: 0.833333 | Scholarship:  NO  | Remaining Fee : 80000]
+[Student: Ahsan | GPA: 4.66667 | Scholarship:  NO  | Remaining Fee : 80000]
+[Student: Ali | GPA: 0.833333 | Scholarship:  NO  | Remaining Fee : 80000]
+[Student: Ahsan | GPA: 4.66667 | Scholarship:  NO  | Remaining Fee : 80000]
+[Student: Ahsan | GPA: 4.66667 | Scholarship:  NO  | Remaining Fee : 80000][Student: 1 | GPA: 0.666667 | Scholarship:  NO  | Remaining Fee : 5000]
+[Student: 2 | GPA: 1.16667 | Scholarship:  NO  | Remaining Fee : 0]
