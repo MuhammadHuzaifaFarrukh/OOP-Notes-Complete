@@ -4,7 +4,7 @@ using namespace std;
 
 class emp
 {
-private: 
+private:
     // Data Members :
     int a=1,b=2,c=3;
 public:
