@@ -5,7 +5,7 @@ Use "#pragma once" on all these header files such that they will not be copied i
 Use the header files or namespaces required to use in these files as needed
 Use the header files of base class and include them in the .h portion of the derived class as needed
 
-In main , we only write either this .cpp file which automatically includes the header file and compile and run like normal (which is a bad practice)
+In main , we only write either this .cpp file that contains the header file and compile and run like normal (which is a bad practice)
 OR 
 we only write the header file and then compile by using command with both of their names and then execute it like below example command :
 1) gcc your_file_name.c a.c -o my_program (C).
