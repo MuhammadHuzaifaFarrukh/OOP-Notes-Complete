@@ -97,13 +97,22 @@ int main()
     //const int&r = x ;           //Directly at x (to Non-Constant Value)
     //const int& r = x + y;       //Both Correct as a const lvalue reference is special: it can bind to an rvalue and extends its lifetime. This is why passing objects by const T& is so flexible. It binds to rvalue and lvalue both
 
-    //A const T& can bind to both const and non-const variables (lvalues), as well as rvalues.
-    //A non-const T& (T&) can only bind to non-const variables (lvalues).
+    //A const T& can bind to both const and non-const variables (lvalues {variables or objects} ), as well as rvalues.
+    //A non-const T& (T&) can only bind to non-const variables  (lvalues {variables or objects} ).
 
 
     int&& rref_mutable = 5;      // Can change: rref_mutable = 10;
     const int&& rref_immutable = 5; // Cannot change: rref_immutable = 10; // ERROR
 
+
+
+
+    //Objects that are returned as reference in functions *this , are lvalues.
+    //Objects that are returned as temporary copy are rvalues.
+
+    //So Same Rule applies to the objects as well that :
+    //Non-Const object and Const Objects can both bind to Const Object Parameters Ref
+    //Const Object only goes to Const Object Ref Parameter not Non-Const Object Ref Parameter
 
     return 0;
 }
