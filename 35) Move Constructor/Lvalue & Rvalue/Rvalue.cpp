@@ -108,10 +108,10 @@ int main()
 
 
     //Objects that are returned as reference in functions *this , are lvalues.
-    //Objects that are returned as temporary copy are rvalues.
+    //Objects that are returned as temporary object copy are rvalues.
 
     //So Same Rule applies to the objects as well that :
-    //Non-Const object and Const Objects can both bind to Const Object Parameters Ref
+    //Non-Const object and Const Objects can both go to Const Object Parameters Ref
     //Const Object only goes to Const Object Ref Parameter not Non-Const Object Ref Parameter
 
     return 0;
@@ -148,3 +148,4 @@ int add(int&& a, int&& b)
     // For int, the 'move' is just a copy, but the overload is distinct.
     return std::move(a) + std::move(b);
 }
+
