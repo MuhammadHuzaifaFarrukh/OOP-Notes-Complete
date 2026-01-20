@@ -34,6 +34,7 @@ void emp :: setdata(int p,int q,int r)
     b=q;
     c=r;
 }
+
 int main()
 {
     emp huzaifa;
