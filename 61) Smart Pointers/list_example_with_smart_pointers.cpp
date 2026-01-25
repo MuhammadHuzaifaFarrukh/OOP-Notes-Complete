@@ -62,3 +62,11 @@ int main()
 
     return 0;
 }
+
+//Why tail is still a raw pointer Node * type :
+
+//A std::unique_ptr represents exclusive ownership.
+//In a linked list, Node A's next pointer owns Node B.
+//If you also make the List's tail pointer a unique_ptr, you are telling the computer that the tail also owns Node B.
+//C++ will not allow this. You cannot have two unique_ptrs pointing to the same memory. If you try to use std::shared_ptr
+//for both, it would "work," but it is inefficient and creates a risk of circular references (memory leaks).
