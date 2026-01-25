@@ -1,4 +1,0 @@
-Try to first do Level 1 to 3 
-Level 4 is a bit hard so solve it separately
-For Level 4 , You can change the CityBlock class as you like but it should have the functionalities as specified
-Also the input (main) and output may also vary but they must implement and use the functions / classes of Location , Roads , Classes

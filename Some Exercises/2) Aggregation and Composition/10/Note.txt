@@ -1,3 +1,0 @@
-You can skip this exercise and go check out about lists.
-Linked List is a practical example of aggregation (weak)
-So if you know how to make lists and work with them then solve this one
