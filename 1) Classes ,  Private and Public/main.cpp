@@ -2,7 +2,7 @@
  
 using namespace std;
 
-class emp
+class emp 
 {
 private:
     // Data Members :
