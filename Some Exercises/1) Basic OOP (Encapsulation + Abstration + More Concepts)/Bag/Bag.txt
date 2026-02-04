@@ -1,0 +1,38 @@
+Phase 1: Basic Implementation (Bag.cpp)
+Tasks:
+
+Create a Bag class with:
+
+size: maximum capacity
+
+cSize: current number of elements
+
+x: dynamic integer array
+
+Implement private helper methods:
+
+resize(): doubles the array size when full
+
+clear(): deallocates memory and resets variables
+
+copy(): performs deep copy of another Bag
+
+Implement:
+
+Constructor with default size 10
+
+Copy constructor
+
+Assignment operator
+
+Destructor
+
+show() method to display elements
+
+Overload:
+
+operator+= to add elements
+
+operator-- (prefix) to remove last element
+
+Test your implementation with the provided main function.

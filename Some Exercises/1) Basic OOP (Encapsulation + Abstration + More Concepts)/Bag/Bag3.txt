@@ -1,0 +1,9 @@
+Phase 4: Bitwise XOR Operator (Bag3.cpp)
+Additional Tasks:
+7. Overload operator^ to compute:
+
+Element-wise XOR between two Bags
+
+Sum of all XOR results
+
+Handle different-sized Bags gracefully

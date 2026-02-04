@@ -1,0 +1,13 @@
+Phase 2: Comparison Operator (Bag2.cpp)
+Additional Tasks:
+5. Overload operator> to compare Bags:
+
+Compare based on sum of all elements
+
+Return true if left operand's sum is greater than right operand's sum
+
+6. Overload operator[] for array-style indexing:
+
+Return reference to allow modification
+
+Handle out-of-bounds access appropriately
