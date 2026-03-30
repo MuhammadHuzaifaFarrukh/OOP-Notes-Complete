@@ -17,7 +17,7 @@ struct Add    //Here we make a function object using operator() , const might be
         cout<<b1<<endl;
         return a + b + c;
     }
-// Here we can also write other class functors also known as Functor Composition / Wrapping
+    // Here we can also write other class functors also known as Functor Composition / Wrapping
 };
 
 int main()
@@ -25,7 +25,16 @@ int main()
     int arr[] = {20,10,30,40,35,23,22,70};
     int i;
     //sort(arr , arr+7);
-    sort(&arr[0], &arr[7], greater<int>()); //greater<int> is a functor as we are calling the code :
+    sort(&arr[0], &arr[7], greater<int>()); 
+    /*
+    // We could also do it like this :
+    // std::greater<int> myObj; // Create instance
+    // std::sort(&arr[0], &arr[7], myObj); // Pass instance
+    greater<int> is called almost NLogn times as std::sort works in O(Nlogn). 
+    */
+
+
+    //greater<int> is a functor as we are calling the code :
     /*
     // This is what greater<int> looks like (simplified not actual code):
     template<typename T>
@@ -36,13 +45,19 @@ int main()
             return a > b;  // This makes it sort in descending order
         }
     };
-
     */
     for( i = 0; i<8 ; i++)
     {
         cout<<arr[i]<<" ";
     }
     cout<<endl;
+
+    //Another example using greater<int>
+    // Named instance approach :
+    greater<int> comp;           // Create named functor
+    bool result = comp(5, 3);    // Use it like a function , Just like comp.operator().(5,3)
+    cout << result << endl;      // Output: 1 (true)
+    
 
     //Using our own function object
     Add a1, a2;  // Create an instance of the Add functor
@@ -52,10 +67,6 @@ int main()
     std::cout << "Result of adding : " << result << std::endl;
 
 
-    //Another example using greater<int>
-    // Named instance approach :
-    greater<int> comp;           // Create named functor
-    bool result = comp(5, 3);    // Use it like a function , Just like comp.operator().(5,3)
-    cout << result << endl;      // Output: 1 (true)
+    
     return 0;
 }
