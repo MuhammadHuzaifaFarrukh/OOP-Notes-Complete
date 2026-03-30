@@ -66,10 +66,10 @@ int main()
     cout << result << endl;      // Output: 1 (true)
     
     // For our User Defined Class :
-
     // E.g : Using vector<myclass> st , we want to sort then : sort(st.begin() , st.end() , myc) where myc is an object of greater<myclass> which contains that relational operation ()
-
-
+    // So in our class , while using the less or greater<myclass> , our myclass needs to have the overloaded functions < or >.
+    // But if we do the Functor Composition then we simply pass that , not the greater or less or etc , we pass our custom functor.
+    // E.g Passing our own MinCompare struct instead of overloading > for the greater<int> then we will write: sort(st.begin() , st.end() , MinCompare) or you can instantiate MinCompare and then pass it as discussed above.
 
     //Using our own function object
     Add a1, a2;  // Create an instance of the Add functor
