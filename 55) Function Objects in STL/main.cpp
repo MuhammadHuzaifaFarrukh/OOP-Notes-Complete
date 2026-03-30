@@ -17,6 +17,7 @@ struct Add    //Here we make a function object using operator() , const might be
         cout<<b1<<endl;
         return a + b + c;
     }
+// Here we can also write other class functors also known as Functor Composition / Wrapping
 };
 
 int main()
