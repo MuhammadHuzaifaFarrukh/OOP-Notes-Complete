@@ -18,6 +18,10 @@ struct Add    //Here we make a function object using operator() , const might be
         return a + b + c;
     }
     // Here we can also write other class functors also known as Functor Composition / Wrapping
+    // This is used when we want to have multiple relational or arithmetic expression solving for a class but function overloading doesn't allow it.
+    // Therefore we make each function in a separate struct for this purpose and then use the instance of this struct.
+    // Mainly used in User Defined Data Types where a data structure like vector or heap of our own class objects needs sorting but we haven't overloaded < or > then we use separate structs for more professional way , although overloading is much more easier. 
+    
 };
 
 int main()
@@ -51,6 +55,9 @@ int main()
         cout<<arr[i]<<" ";
     }
     cout<<endl;
+    // For having multiple relational operations of a class in a functor , we usually implement them in separate structs instead of the original class as function overloading like this won't be allowed.
+    // For our User Defined Class :
+    // E.g : Using vector<myclass> st , we want to sort then : sort(st.begin() , st.end() , greater<myclass>)
 
     //Another example using greater<int>
     // Named instance approach :
@@ -58,6 +65,11 @@ int main()
     bool result = comp(5, 3);    // Use it like a function , Just like comp.operator().(5,3)
     cout << result << endl;      // Output: 1 (true)
     
+    // For our User Defined Class :
+
+    // E.g : Using vector<myclass> st , we want to sort then : sort(st.begin() , st.end() , myc) where myc is an object of greater<myclass> which contains that relational operation ()
+
+
 
     //Using our own function object
     Add a1, a2;  // Create an instance of the Add functor
@@ -66,7 +78,5 @@ int main()
     //Objects treated like function , Member function used like a normal function as above line
     std::cout << "Result of adding : " << result << std::endl;
 
-
-    
     return 0;
 }
