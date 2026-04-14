@@ -39,25 +39,29 @@ Move Assignment Operator
 Even though compiler generates the default constructor for us , still its not in this list as they are related to resource management and even if we define our blank constructor then it does not restrict for other resource managing functions so that's also another reason. Defining blank constructor only excludes compiler generated blank constructor
 
 Although you can make some of them but here are some restrictions :
-Making destructor will not generate compiler's destructor , move constructor and move assignment operator
-Making Copy Constructor will not generate compiler's Copy Constructor and Move Constructor and Move Assignment Operator
-Making Copy Assignment will not generate compiler's Copy Assignment and Move Constructor and Move Assignment Operator
-Making Move Assignment will not generate compiler's Move Assignment and Copy Assignment Operator
-Making Move Constructor will not generate compiler's Move Constructor , Copy Constructor and Copy Assignment Operator
+Making Normal Constructor allows compiler to generate its own all others.
+Making destructor still allows compiler to generate its own.
+Making Copy Constructor will not generate any other Normal Constructor , and for the Moves , it will try to use the Copy ones which affects speed and slows down. However it will still generate its own copy assignment.
+Making Copy Assignment will not generate any other Normal Constructor , and for the Moves , it will try to use the Copy ones which affects speed and slows down. However it will still generate its own copy constructor.
+Making Move Constructor will not generate compiler's Copy Constructor and Copy Assignment Operator. However it will generate compiler's Move Assignment.
+Making Move Assignment will not generate compiler's Copy Constructor and Copy Assignment Operator. However it will generate compiler's Move Constructor.
+
+This ensures that where we want to control our own Semantics , we should do it properly instead of letting compiler handling it which troubles in memory issues as well.
 
 
-//Defining any one forces you to define all (or delete them explicitly from function prototype to not use them )
+// Either Explicitly write all the copy / move constructors / assignments , normal ones and destructors. OR you may define it using a syntax in C++. 
+//Defining any one forces you to define all which is a Good Practice(or delete them explicitly from function prototype to not use them )
 the other four functions to ensure correctness and efficiency.
 
-//By Defining we mean that either write all their functions explicitly like we do in code or write the below line and ask compiler to generate a default one ,
-this makes compiler generate the default one for you 
-Return_Type (if any) Function_Name( Parameters ) = default; 
+//By Defining we mean that either write all their functions explicitly like we do in code or write the below line and ask compiler to generate a default one , this makes compiler generate the default one for you. If we don't write this syntax to ask compiler for compiler generated then it will miss those ones stated above.
+Function_Name( Parameters ) = default; 
 //By Deleting , we mean that we are never gonna use this function , not even by compiler 
-Return_Type (if any) Function_Name( Parameters ) = delete;
+Function_Name( Parameters ) = delete;
 
 
 Once you use = default or = delete, you cannot provide a custom definition.
+However if you make destructor = delete , then you won't be able to make Stack objects. You will always need to dynamically allocate.
 
 
-
+ 
 */
