@@ -53,7 +53,6 @@ int main()
 
 //So you can either 1) Make a default constructor with setting value of each member set to zero or 2) Make a member initialization list in the blank / default constructor or you can also do that
 //3) When making an instance of a class you can define it as : Point P = {} , this sets all the member variables to zero
-//However this Point P = {} won't work if user has already made a default / blank constructor that does nothing
 
 //4) Making a default constructor but using it like Point()=default and then when making an instance of a class use again Point P = {} , this ensures all member variables set to zero
 //The Default Arguments in a constructor or any other function should be written at the end of all parameters and then we can call these functions / constructors even by not passing only the default args as required args must be put
