@@ -5,6 +5,8 @@ using namespace std;
 What the Classic Adapter Pattern Actually Is ?
 The true GoF Adapter Pattern bridges two incompatible, existing interfaces without changing their source code.
 It wraps an existing class (the Adaptee) inside a new class (the Adapter) to translate requests from a target interface.
+Uses Inheritance or Composition unlike Container Adapter that use C++ Templates (Compile time).
+Connects two pre-existing, incompatible interfaces unlike the STL Container Adapters that creates a brand-new, minimal interface for a container e.g stack can be made to use vector/list/deque etc.
 
 Adapter Pattern (Structural LLD Pattern)
 LLD Focus: Used when integrating third-party APIs or legacy modules into a new class design (e.g., adapting a legacy PaymentGateway interface to work with a unified IPaymentProcessor interface).
