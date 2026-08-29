@@ -12,6 +12,7 @@ using namespace std;
 Factory Pattern (Creational LLD Pattern)
 LLD Focus: Used when designing class structures (e.g., designing a Parking Lot system where a VehicleFactory creates Car, Bike, or Truck objects based on input).
 Goal: Ensures open-closed principle (adding a new vehicle type doesn't break existing creation code).
+Relies on Dynamic Polymorphism.
 Design Patterns: Patterns like Factory, Adapter, Observer, and Strategy are specifically engineered to decouple components.
 */
 
