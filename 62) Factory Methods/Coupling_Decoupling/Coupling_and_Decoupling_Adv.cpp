@@ -8,6 +8,7 @@ using namespace std;
 Coupling measures how dependent software modules (classes, functions, or components) are on each other.
 
 Coupling: The degree of interdependence between two modules. High coupling means a change in one class forces changes in others.
+Relies on Dynamic Polymorphism.
 Low coupling means modules operate independently (Low coupling is better than high/tight coupling).
 
 Tight Coupling: Components are directly dependent on concrete implementations.
@@ -15,6 +16,7 @@ Changing one component breaks or requires rewriting another.
 
 Decoupling (Loose Coupling): Structuring code so components interact through interfaces, abstract base classes, or events rather than concrete classes.
 Changes to internal implementation details do not impact other parts of the system.
+Relies on Dynamic Polymorphism.
 */
 
 /*
