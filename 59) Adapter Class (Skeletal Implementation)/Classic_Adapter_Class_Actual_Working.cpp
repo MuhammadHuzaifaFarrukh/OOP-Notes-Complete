@@ -10,10 +10,11 @@ Connects two pre-existing, incompatible interfaces unlike the STL Container Adap
 
 
 Adapter Pattern (Structural LLD Pattern)
-LLD Focus: Used when integrating third-party APIs or legacy modules into a new class design (e.g., adapting a legacy PaymentGateway interface to work with a unified IPaymentProcessor interface).
+LLD Focus: Used when integrating third-party APIs or legacy modules or library into a new class design (e.g., adapting a legacy PaymentGateway interface to work with a unified IPaymentProcessor interface).
 Goal: Interface compatibility without modifying existing source code.
 Relies on Dynamic Polymorphism (Not for the STL Container Adapter).
 */
+// Interface => Adaptee (Full Implemented / Incompatible System) => Adapter (Translator)
 
 // 1. Target Interface (What your system expects)
 class TargetPrinter
