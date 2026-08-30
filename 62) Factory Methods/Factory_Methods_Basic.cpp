@@ -23,6 +23,7 @@ The Problem Without a Factory (High Coupling)
 If the customer (main()) has to manually assemble the burger using new, the customer is tightly coupled to every single burger recipe.
 Low Coupling : Instead, you delegate object creation to a dedicated Factory. You ask for what you want, and the Factory handles the creation logic.
 */
+// Interface => Concrete => Factory
 
 // 1. Common Product Interface
 class Burger
