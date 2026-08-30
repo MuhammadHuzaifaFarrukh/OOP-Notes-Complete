@@ -7,7 +7,9 @@ Skeletal Implementation (OOP Architectural Idiom in LLD)
 LLD Focus: Used when designing class hierarchies and custom libraries (e.g., defining an AbstractList base class that implements standard search/iteration methods, allowing derived classes like ArrayList or LinkedList to only implement core storage functions).
 Goal: Code reusability and minimizing boilerplate across concrete class implementations.
 Relies on Dynamic Polymorphism.
+This is the Default Abstract Adapter Design.
 */
+// Interface => Adapter (Abstract) => Concrete
 
 class A // This one will be Abstract Class (Interface Level)
 {
