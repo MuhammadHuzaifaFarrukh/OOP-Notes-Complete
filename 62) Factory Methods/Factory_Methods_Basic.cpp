@@ -21,9 +21,12 @@ Design Patterns: Patterns like Factory, Adapter, Observer, and Strategy are spec
 You go to a fast-food counter and order a "Cheeseburger". You don't care how the kitchen grills the beef, toasts the bun, or slices the cheese—you just want the completed burger handed to you.
 The Problem Without a Factory (High Coupling)
 If the customer (main()) has to manually assemble the burger using new, the customer is tightly coupled to every single burger recipe.
-Low Coupling : Instead, you delegate object creation to a dedicated Factory. You ask for what you want, and the Factory handles the creation logic.
+main() includes the headers for all concrete classes and is tightly coupled to their exact implementation details.
+
+Low Coupling : Instead, you delegate object creation to a dedicated Factory.
+You ask for what you want, and the Factory handles the creation logic.(Single Responsibility Principle)
 */
-// Interface => Concrete => Factory
+// Abstract Interface => Concrete (Products here) => Concrete Factory
 
 // 1. Common Product Interface
 class Burger
